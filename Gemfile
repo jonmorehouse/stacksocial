@@ -5,6 +5,8 @@ gem 'rails', '3.2.13'
 # initialize some global gems etc
 gem 'mongoid'
 gem 'figaro'
+gem 'omniauth'
+
 
 
 # Gems used only for assets and not required

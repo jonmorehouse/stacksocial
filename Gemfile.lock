@@ -56,6 +56,7 @@ GEM
       rspec (~> 2.13)
     haml (4.0.2)
       tilt
+    hashie (2.0.5)
     hike (1.2.2)
     i18n (0.6.1)
     jbuilder (1.4.1)
@@ -80,6 +81,9 @@ GEM
       tzinfo (~> 0.3.22)
     moped (1.4.5)
     multi_json (1.7.3)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
     origin (1.1.0)
     polyglot (0.3.3)
     pry (0.9.12.2)
@@ -155,5 +159,6 @@ DEPENDENCIES
   haml
   jbuilder
   mongoid
+  omniauth
   rails (= 3.2.13)
   rspec-rails
