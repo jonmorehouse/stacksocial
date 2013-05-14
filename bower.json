@@ -1,0 +1,16 @@
+{
+	"name": "1stRound Clothing",
+	"version": "0.0.1",
+	"dependencies": {
+
+		"modernizr": "latest",
+		"jquery": "latest",
+		"jquery_plugins": "MorehouseJ09/jquery_plugins",
+		"angular": "latest",
+		"underscore": "underscore",
+		"hammerjs": "latest",
+		"iosslider": "latest"
+	},
+
+	"shorthand_resolver": "git://github.com/{{{ organization }}}/{{{ package }}}.git"
+}
