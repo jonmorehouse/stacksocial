@@ -9,13 +9,15 @@ class SessionsController < ApplicationController
 	# this session is created with the oauth callback element
 	def create
 
-		raise request.env["omniauth.auth"].to_yaml
-
+		
+			
 	end
 
+	# create a failure message
 	def failure
 
 		# do a clever redirect here!
+		render :json => {:message => "FAILED LOGIN"}
 
 	end
 
