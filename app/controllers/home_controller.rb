@@ -10,8 +10,15 @@ class HomeController < ApplicationController
 
 	def index
 
-		# use helper methods here to determine whether or not the user is logged in etc	
-		render :json => {:message => session}
+		if signed_in?
+
+			# render something cool here!
+
+		else
+
+			# check for flash errors etc
+
+		end	
 
 	end
 

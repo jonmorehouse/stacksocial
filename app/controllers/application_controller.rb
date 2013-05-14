@@ -2,29 +2,31 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   # declare helper methods throughout
-  helper_method :current_user
+  helper_method :user
+  helper_method :signed_in?
 
   private
 
   	# check whether or not a user is signed in
   	def signed_in?			
 
-  			
+  		  return true if current_user	
 
   	end
 
   	# get the current user element etc
-  	def current_user
+  	def user
 
-  		# make sure we have a valid session with our user's id in it
-  		if !session.has_key? :user_id	
+      begin 
 
-  			# if we don't go ahead and reroute to the main application page
-  			redirect_to root_url, :notice => "Not Logged In"
+        @user ||= User.find(session[:user_id]) if session[:user_id]
 
-  		# return the current user etc!
-		@user = User.where(_id: session[:user_id])  						
+      # if we have a mongoid error, handle it nicely and return 
+      rescue Mongoid::Errors::DocumentNotFound
 
+        nil
+
+      end
   	end
 
 
