@@ -9,6 +9,9 @@ Stacksocial::Application.routes.draw do
   # create basic login element for creating new sessions -- this goes through our twitter / auth elements
   match "/login" => "sessions#new", :as => :login 
 
+  # app url base
+  match "/app" => "app#index", :ass => :app
+
   # create namespace for api calls etc!
   # all angular access goes through here
   namespace :api do

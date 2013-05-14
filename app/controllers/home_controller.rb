@@ -11,9 +11,16 @@
 
 class HomeController < ApplicationController
 
+	# place stylesheets etc that we need here
+	before_filter lambda{ page_config "home", (production?) ? nil : ["home"] }
+
 	def index
 
+		if logged_in? 
 
+			redirect_to app_url								
+
+		end
 
 	end
 

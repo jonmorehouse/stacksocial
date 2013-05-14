@@ -5,7 +5,10 @@
 		%meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
 		%title= @config[:page_title]
 
-		= stylesheet_link_tag @config[:stylesheet]
+		/ generate a stylesheet for each passed in element
+		- @config[:stylesheets].each do |s|
+
+			= stylesheet_link_tag s
 
 		/ now include the require js main module
 		%script{:src => "/components/requirejs/require.js", "data-main" => "javascripts/#{@config[:require_app]}.js"}
