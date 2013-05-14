@@ -4,9 +4,9 @@ Stacksocial::Application.routes.draw do
 
   match "/auth/failure" => "sessions#failure" 
 
-  match "/signout" => "sessions#destroy", :as => :signout
+  match "/logout" => "sessions#destroy", :as => :logout
 
-  match "/signin" => "sessions#new", :as => :signin 
+  match "/login" => "sessions#new", :as => :login 
 
   root :to => 'home#index'
 
