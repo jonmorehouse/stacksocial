@@ -16,6 +16,19 @@ group :assets do
 	gem 'jbuilder'
 	# gruntfile dependencies go in here but in reality can just use system elements
 	# we're going to deploy static assets to heroku etc
+	gem 'sass'
+	# initialize basic compass element
+	gem 'compass'
+	# include compass version of twitter bootstrap etc
+	gem 'compass_twitter_bootstrap'
+	# intiaillize my custom compass colors
+	gem 'compass-colors', :github => 'MorehouseJ09/compass-colors'
+
+	gem 'animate-sass', :github => 'MorehouseJ09/animate.sass'
+
+	gem 'sassy-buttons'
+
+	gem 'susy'
 
 end
 
