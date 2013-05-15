@@ -38,12 +38,8 @@ module.exports = (grunt) ->
         files: ["<%= yeoman.app %>/styles/{,*/}*.{scss,sass}", "<%= yeoman.app %>/styles/mixins/_*.sass", "<%= yeoman.app %>/styles/partials/_*.sass"]
         tasks: ["compass:dist"]
 
-      livereload:
-        files: ["<%= yeoman.app %>/*.html", "{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css", "{.tmp,<%= yeoman.app %>}/{,*/}*.js", "<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}"]
-        tasks: ["livereload"]
-
       jade:
-        files: ["<%= yeoman.app %>/scripts/{,*/}*.{jade}"]
+        files: ["<%= yeoman.app %>/scripts/partials/{,*/}*.jade"]
         tasks: ["jade:compile"]
 
     connect:

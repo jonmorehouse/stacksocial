@@ -13,12 +13,15 @@ require ['bootstrap'], ->
 		# initialize jquery -- not really needeed for application but for some reason I coudln't get angular.element(document).ready to call without it
 		'jquery',
 		# initialize our application controller for this piece
-		'controllers/app_controller',
+		'controllers/controllers',
 		# initialize basic routing etc
-		'routes'
+		'router'
+		
 	], (angular, app) ->
 
 		# wait for angular document body to be ready
 		angular.element(document).ready () ->
 
 			angular.bootstrap document, ['app']
+
+				

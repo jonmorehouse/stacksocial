@@ -1,6 +1,10 @@
 #forkme
 	%a{:href => "http://github.com/MorehouseJ09/stacksocial"}	
 
-#header
+#header{:"ng-model" => "currentUser", :"ng-controller" => "UserController"}
 	
-	%h1= "Welcome {{user.name}}"
+	%h1= "Welcome {{currentUser.name}}"
+
+
+
+

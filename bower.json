@@ -3,13 +3,13 @@
 	"version": "0.0.1",
 	"dependencies": {
 
+		"requirejs": "latest",
 		"modernizr": "latest",
 		"jquery": "latest",
-		"jquery_plugins": "MorehouseJ09/jquery_plugins",
 		"angular": "latest",
-		"underscore": "underscore",
-		"hammerjs": "latest",
-		"iosslider": "latest"
+		"angular-resource": "latest",
+		"underscore": "underscore"
+
 	},
 
 	"shorthand_resolver": "git://github.com/{{{ organization }}}/{{{ package }}}.git"
