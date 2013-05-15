@@ -2157,15 +2157,15 @@ body { width: 100%; margin: 0; padding: 0; background: url('/images/global_backg
 /* line 10, ../../app/assets/styles/partials/_header.sass */
 #forkme > a { position: relative; height: 100%; width: 100%; cursor: pointer; display: block; background: url('/images/logos/forkme.png'); background-repeat: none; background-size: 100% 100%; border-bottom-right-radius: 50%; }
 
-/* line 23, ../../app/assets/styles/partials/_header.sass */
-#header { margin-left: 16.94915%; width: 66.10169%; float: left; margin-right: 1.69492%; display: inline; }
+/* line 22, ../../app/assets/styles/partials/_header.sass */
+#header { margin-left: 16.94915%; width: 66.10169%; float: left; margin-right: 1.69492%; display: inline; -webkit-animation: rise 2s; -moz-animation: rise 2s; -o-animation: rise 2s; animation: rise 2s; }
 /* line 28, ../../app/assets/styles/partials/_header.sass */
 #header > h1, #header > h2 { display: block; margin: 0 auto; text-align: center; padding: 0.5em 0; font-family: helvetica, arial, sans-serif; font-size: 3.5em; color: #2578b4; font-family: "Kavoon"; background: -webkit-linear-gradient(#eeeeee, #333333); -webkit-background-clip: text; line-height: 1.1em; text-shadow: 2px 2px 2px black; letter-spacing: 2px; color: white; }
 /* line 36, ../../app/assets/styles/partials/_header.sass */
 #header > h2 { font-family: helvetica, arial, sans-serif; font-size: 2.2em; color: #2578b4; font-family: "Kavoon"; background: -webkit-linear-gradient(#eeeeee, #333333); -webkit-background-clip: text; line-height: 1.1em; text-shadow: 2px 2px 2px black; letter-spacing: 2px; padding: 0.5em; }
 
 /* line 1, ../../app/assets/styles/partials/_home.sass */
-#about { background: url('/images/binding_dark.png'); border: 2px solid #2578b4; border-radius: 2em; overflow: hidden; zoom: 1; }
+#about { background: url('/images/binding_dark.png'); border: 2px solid #2578b4; border-radius: 2em; box-shadow: 0.4em 0.4em 0.5em rgba(36, 36, 36, 0.8); -webkit-animation: rise 2s; -moz-animation: rise 2s; -o-animation: rise 2s; animation: rise 2s; overflow: hidden; zoom: 1; }
 /* line 6, ../../app/assets/styles/partials/_home.sass */
 #about > p, #about > div { margin-left: 8.47458%; margin-right: 8.47458%; width: 83.05085%; float: left; margin-right: 1.69492%; display: inline; color: white; font-family: "Didact Gothic", arial; font-size: 1.3em; color: white; }
 /* line 16, ../../app/assets/styles/partials/_home.sass */
@@ -2178,11 +2178,13 @@ body { width: 100%; margin: 0; padding: 0; background: url('/images/global_backg
 #about > div > div:first-of-type { margin-left: 8.47458%; }
 
 /* line 35, ../../app/assets/styles/partials/_home.sass */
-#login { background: url('/images/binding_dark.png'); border: 2px solid #2578b4; border-radius: 2em; overflow: hidden; zoom: 1; margin-left: 25.42373%; width: 49.15254%; float: left; margin-right: 1.69492%; display: inline; margin-top: 2em; }
-/* line 43, ../../app/assets/styles/partials/_home.sass */
+#login { background: url('/images/binding_dark.png'); border: 2px solid #2578b4; border-radius: 2em; box-shadow: 0.4em 0.4em 0.5em rgba(36, 36, 36, 0.8); -webkit-animation: rise 2s; -moz-animation: rise 2s; -o-animation: rise 2s; animation: rise 2s; overflow: hidden; zoom: 1; margin-left: 25.42373%; width: 49.15254%; float: left; margin-right: 1.69492%; display: inline; margin-top: 2em; margin-bottom: 2em; }
+/* line 44, ../../app/assets/styles/partials/_home.sass */
 #login > a { width: 100%; float: left; margin-right: 3.44828%; display: inline; height: 15em; background: url('/images/logos/twitter.png'); background-size: 40% auto; background-position: center 0.5em; background-repeat: no-repeat; position: relative; }
-/* line 55, ../../app/assets/styles/partials/_home.sass */
-#login > a > span > h1 { display: block; margin: 0 auto; text-align: center; font-family: helvetica, arial, sans-serif; font-size: 1.5em; color: #2578b4; font-family: "Kavoon"; background: -webkit-linear-gradient(#eeeeee, #333333); -webkit-background-clip: text; line-height: 1.1em; text-shadow: 2px 2px 2px black; letter-spacing: 2px; color: white; position: absolute; bottom: 1em; height: 100%; width: 100%; }
+/* line 54, ../../app/assets/styles/partials/_home.sass */
+#login > a > span { width: 100%; position: absolute; bottom: 0; overflow: hidden; zoom: 1; }
+/* line 60, ../../app/assets/styles/partials/_home.sass */
+#login > a > span > h1 { display: block; margin: 0 auto; text-align: center; font-family: helvetica, arial, sans-serif; font-size: 1.5em; color: #2578b4; font-family: "Kavoon"; background: -webkit-linear-gradient(#eeeeee, #333333); -webkit-background-clip: text; line-height: 1.1em; text-shadow: 2px 2px 2px black; letter-spacing: 2px; color: white; padding: 1em 0; }
 
 /* line 10, ../../../../../.rvm/gems/ruby-2.0.0-p0@social/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 html, body { height: 100%; }
@@ -2196,6 +2198,4 @@ html, body { height: 100%; }
 footer { clear: both; position: relative; height: 5em; }
 
 /* line 4, ../../app/assets/styles/partials/_footer.sass */
-footer { background-color: #2578b4; }
-/* line 8, ../../app/assets/styles/partials/_footer.sass */
-footer > h1 { width: 50%; display: block; margin: 0 auto; text-align: center; font-family: helvetica, arial, sans-serif; font-size: 1em; color: white; }
+footer { background: url('/images/binding_dark.png'); border-top: 2px solid black; }

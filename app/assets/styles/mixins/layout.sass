@@ -13,6 +13,9 @@
 	background: image-url("binding_dark.png", false, false) 
 	border: 2px solid $blue
 	border-radius: 2em
-
+	@include box_shadow
+	@include rise_animation
 	
+@mixin box_shadow
 	
+	box-shadow: 0.4em 0.4em 0.5em rgba(36,36,36, 0.8)
