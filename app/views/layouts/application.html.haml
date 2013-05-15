@@ -12,11 +12,18 @@
 
 		/ now include the require js main module
 		%script{:src => "/components/requirejs/require.js", "data-main" => "javascripts/#{@config[:require_app]}.js"}
-		%script{:src => "/components/modernizr/modernizr.js"}
+
 
 	%body
-		#app
+
+		= render 'app/header'
+
+		#layout
+
 			= yield
 
+			#layout_footer
+
+		= render 'partials/footer'
 
 

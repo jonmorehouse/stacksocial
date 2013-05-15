@@ -16,14 +16,15 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def page_config(page_id, stylesheets = nil)
+    def page_config(page_id, stylesheets = [])
 
       @config = {
 
          :page_title => "Twitter App",  
+         # only include the require app if we are going to be needing that particular piece
          :require_app => (page_id != "home") ? "app" : nil,
-         :stylesheets => (stylesheets) ? stylesheets : ["test"]
-
+         # place any global styles / resets in this list globally!
+         :stylesheets => [page_id] + stylesheets
       }
 
     end
