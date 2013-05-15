@@ -1,0 +1,64 @@
+#about
+	
+	@include base_box
+	@include clearfix
+
+	> p, > div
+
+		@include pre(1)
+		@include post(1)
+		@include span-columns(10)
+		@include plain_text_font(1.3em)
+
+	// individual div element which should float!
+	> div
+
+		> div
+
+			@include span-columns(5)
+			@include clearfix
+
+			> h2
+
+				@include center
+				padding-bottom: 1em
+				border-bottom: 1px solid $blue
+
+			> ul > li
+
+				@include plain_text_font(1em)
+
+			&:first-of-type
+
+				@include pre(1)
+
+#login
+
+	@include base_box
+	@include clearfix
+	@include pre(3)
+	@include span-columns(6)
+	margin-top: 2em
+
+	> a	
+
+		@include span-columns(6, 6)
+		height: 15em
+		background: image-url("logos/twitter.png", false, false)
+		background-size: 40% auto
+		background-position: center 0.5em
+		background-repeat: no-repeat
+		position: relative
+
+		> span
+			
+			> h1
+
+				@include center
+				@include header_font
+				color: white
+				position: absolute
+				bottom: 1em
+				height: 100%
+				width: 100%
+

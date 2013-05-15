@@ -1,3 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=Happy+Monkey);
+@import url(http://fonts.googleapis.com/css?family=Happy+Monkey|Bowlby+One);
+@import url(http://fonts.googleapis.com/css?family=Kavoon);
+@import url(http://fonts.googleapis.com/css?family=Didact+Gothic);
 /* line 61, ../../../../../.rvm/gems/ruby-2.0.0-p0@social/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
 * html { font-size: 100%; }
 
@@ -2108,13 +2112,90 @@ html { font-size: 16px; line-height: 1.5em; }
 /* line 29, ../../../../../.rvm/gems/ruby-2.0.0-p0@social/bundler/gems/animate.sass-a6e41ed48d3d/stylesheets/animate/animations/flippers/_flipOutY.scss */
 .flipOutY { -webkit-animation-name: flipOutY; -moz-animation-name: flipOutY; -ms-animation-name: flipOutY; -o-animation-name: flipOutY; animation-name: flipOutY; -webkit-backface-visibility: visible !important; -moz-backface-visibility: visible !important; -ms-backface-visibility: visible !important; -o-backface-visibility: visible !important; backface-visibility: visible !important; }
 
-/* line 31, ../../app/assets/styles/base.sass */
-body { width: 100%; margin: 0; padding: 0; }
+@-webkit-keyframes rise { /* line 3, ../../app/assets/styles/mixins/_animations.sass */
+  0% { top: 30em; -webkit-transform: scale(0); opacity: 0; }
+  /* line 7, ../../app/assets/styles/mixins/_animations.sass */
+  50% { top: 15em; -webkit-transform: scale(0); }
+  /* line 10, ../../app/assets/styles/mixins/_animations.sass */
+  82.5% { -webkit-transform: scale(1.05); -webkit-animation-timing-function: ease-out; opacity: 1; }
+  /* line 14, ../../app/assets/styles/mixins/_animations.sass */
+  100% { top: 2em; -webkit-transform: scale(1); } }
 
-/* line 37, ../../app/assets/styles/base.sass */
+@-moz-keyframes rise { /* line 19, ../../app/assets/styles/mixins/_animations.sass */
+  0% { top: 30em; -moz-transform: scale(0); opacity: 0; }
+  /* line 23, ../../app/assets/styles/mixins/_animations.sass */
+  50% { top: 15em; -moz-transform: scale(0); }
+  /* line 26, ../../app/assets/styles/mixins/_animations.sass */
+  82.5% { -moz-transform: scale(1.05); -moz-animation-timing-function: ease-out; opacity: 1; }
+  /* line 30, ../../app/assets/styles/mixins/_animations.sass */
+  100% { top: 2em; -moz-transform: scale(1); } }
+
+@-webkit-keyframes fade_in { /* line 43, ../../app/assets/styles/mixins/_animations.sass */
+  0% { opacity: 0; }
+  /* line 45, ../../app/assets/styles/mixins/_animations.sass */
+  50% { opacity: 0; }
+  /* line 47, ../../app/assets/styles/mixins/_animations.sass */
+  100% { opacity: 1; } }
+
+@-moz-keyframes fade_in { /* line 52, ../../app/assets/styles/mixins/_animations.sass */
+  0% { opacity: 0; }
+  /* line 54, ../../app/assets/styles/mixins/_animations.sass */
+  50% { opacity: 0; }
+  /* line 56, ../../app/assets/styles/mixins/_animations.sass */
+  100% { opacity: 1; } }
+
+/* line 2, ../../app/assets/styles/partials/_body.sass */
+body { width: 100%; margin: 0; padding: 0; background: url('/images/global_background.png'); }
+
+/* line 10, ../../app/assets/styles/partials/_body.sass */
 #layout { width: 100%; zoom: 1; max-width: 59em; _width: 59em; padding-left: 1em; padding-right: 1em; margin-left: auto; margin-right: auto; }
 /* line 38, ../../../../../.rvm/gems/ruby-2.0.0-p0@social/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 #layout:after { content: ""; display: table; clear: both; }
 
-/* line 4, ../../app/assets/styles/home.sass */
-#home { width: 100%; float: left; margin-right: 1.69492%; display: inline; }
+/* line 1, ../../app/assets/styles/partials/_header.sass */
+#forkme { -webkit-animation: fade_in 6s; -moz-animation: fade_in 6s; position: fixed; top: 0; left: 0; height: 150px; width: 150px; }
+/* line 10, ../../app/assets/styles/partials/_header.sass */
+#forkme > a { position: relative; height: 100%; width: 100%; cursor: pointer; display: block; background: url('/images/logos/forkme.png'); background-repeat: none; background-size: 100% 100%; border-bottom-right-radius: 50%; }
+
+/* line 23, ../../app/assets/styles/partials/_header.sass */
+#header { margin-left: 16.94915%; width: 66.10169%; float: left; margin-right: 1.69492%; display: inline; }
+/* line 28, ../../app/assets/styles/partials/_header.sass */
+#header > h1, #header > h2 { display: block; margin: 0 auto; text-align: center; padding: 0.5em 0; font-family: helvetica, arial, sans-serif; font-size: 3.5em; color: #2578b4; font-family: "Kavoon"; background: -webkit-linear-gradient(#eeeeee, #333333); -webkit-background-clip: text; line-height: 1.1em; text-shadow: 2px 2px 2px black; letter-spacing: 2px; color: white; }
+/* line 36, ../../app/assets/styles/partials/_header.sass */
+#header > h2 { font-family: helvetica, arial, sans-serif; font-size: 2.2em; color: #2578b4; font-family: "Kavoon"; background: -webkit-linear-gradient(#eeeeee, #333333); -webkit-background-clip: text; line-height: 1.1em; text-shadow: 2px 2px 2px black; letter-spacing: 2px; padding: 0.5em; }
+
+/* line 1, ../../app/assets/styles/partials/_home.sass */
+#about { background: url('/images/binding_dark.png'); border: 2px solid #2578b4; border-radius: 2em; overflow: hidden; zoom: 1; }
+/* line 6, ../../app/assets/styles/partials/_home.sass */
+#about > p, #about > div { margin-left: 8.47458%; margin-right: 8.47458%; width: 83.05085%; float: left; margin-right: 1.69492%; display: inline; color: white; font-family: "Didact Gothic", arial; font-size: 1.3em; color: white; }
+/* line 16, ../../app/assets/styles/partials/_home.sass */
+#about > div > div { width: 40.67797%; float: left; margin-right: 1.69492%; display: inline; overflow: hidden; zoom: 1; }
+/* line 21, ../../app/assets/styles/partials/_home.sass */
+#about > div > div > h2 { display: block; margin: 0 auto; text-align: center; padding-bottom: 1em; border-bottom: 1px solid #2578b4; }
+/* line 27, ../../app/assets/styles/partials/_home.sass */
+#about > div > div > ul > li { color: white; font-family: "Didact Gothic", arial; font-size: 1em; color: white; }
+/* line 31, ../../app/assets/styles/partials/_home.sass */
+#about > div > div:first-of-type { margin-left: 8.47458%; }
+
+/* line 35, ../../app/assets/styles/partials/_home.sass */
+#login { background: url('/images/binding_dark.png'); border: 2px solid #2578b4; border-radius: 2em; overflow: hidden; zoom: 1; margin-left: 25.42373%; width: 49.15254%; float: left; margin-right: 1.69492%; display: inline; margin-top: 2em; }
+/* line 43, ../../app/assets/styles/partials/_home.sass */
+#login > a { width: 100%; float: left; margin-right: 3.44828%; display: inline; height: 15em; background: url('/images/logos/twitter.png'); background-size: 40% auto; background-position: center 0.5em; background-repeat: no-repeat; position: relative; }
+/* line 55, ../../app/assets/styles/partials/_home.sass */
+#login > a > span > h1 { display: block; margin: 0 auto; text-align: center; font-family: helvetica, arial, sans-serif; font-size: 1.5em; color: #2578b4; font-family: "Kavoon"; background: -webkit-linear-gradient(#eeeeee, #333333); -webkit-background-clip: text; line-height: 1.1em; text-shadow: 2px 2px 2px black; letter-spacing: 2px; color: white; position: absolute; bottom: 1em; height: 100%; width: 100%; }
+
+/* line 10, ../../../../../.rvm/gems/ruby-2.0.0-p0@social/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+html, body { height: 100%; }
+
+/* line 12, ../../../../../.rvm/gems/ruby-2.0.0-p0@social/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+#layout { clear: both; min-height: 100%; height: auto !important; height: 100%; margin-bottom: -5em; }
+/* line 18, ../../../../../.rvm/gems/ruby-2.0.0-p0@social/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+#layout #layout_footer { height: 5em; }
+
+/* line 20, ../../../../../.rvm/gems/ruby-2.0.0-p0@social/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+footer { clear: both; position: relative; height: 5em; }
+
+/* line 4, ../../app/assets/styles/partials/_footer.sass */
+footer { background-color: #2578b4; }
+/* line 8, ../../app/assets/styles/partials/_footer.sass */
+footer > h1 { width: 50%; display: block; margin: 0 auto; text-align: center; font-family: helvetica, arial, sans-serif; font-size: 1em; color: white; }

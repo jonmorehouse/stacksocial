@@ -31,7 +31,7 @@ output_style = :compact
 disable_warnings = true
 
 # stop debug information for sass output etc
-sass_options = {:debug_info => false}
+sass_options = {:debug_info => false, :cache => true}
 
 
 

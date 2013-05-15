@@ -1,0 +1,62 @@
+//animation
+@-webkit-keyframes rise
+  0%
+    top: 30em
+    -webkit-transform: scale(0)
+    opacity: 0
+  50%
+    top: 15em
+    -webkit-transform: scale(0)
+  82.5%
+    -webkit-transform: scale(1.05)
+    -webkit-animation-timing-function: ease-out
+    opacity: 1
+  100%
+    top: 2em
+    -webkit-transform: scale(1)
+      
+@-moz-keyframes rise
+  0%
+    top: 30em
+    -moz-transform: scale(0)
+    opacity: 0
+  50%
+    top: 15em
+    -moz-transform: scale(0)
+  82.5%
+    -moz-transform: scale(1.05)
+    -moz-animation-timing-function: ease-out
+    opacity: 1
+  100%
+    top: 2em
+    -moz-transform: scale(1)
+
+@mixin rise_animation
+  -webkit-animation: rise 2s
+  -moz-animation: rise 2s
+  -o-animation: rise 2s
+  animation: rise 2s
+
+
+@-webkit-keyframes fade_in  
+
+  0%
+    opacity: 0
+  50%
+    opacity: 0
+  100%
+    opacity: 1
+
+@-moz-keyframes fade_in  
+
+  0%
+    opacity: 0
+  50%
+    opacity: 0
+  100%
+    opacity: 1
+
+@mixin fade_in($length: 4s)
+  -webkit-animation: fade_in $length
+  -moz-animation: fade_in $length
+

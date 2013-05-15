@@ -35,7 +35,7 @@ module.exports = (grunt) ->
         tasks: ["coffee:test"]
 
       compass:
-        files: ["<%= yeoman.app %>/styles/{,*/}*.{scss,sass}"]
+        files: ["<%= yeoman.app %>/styles/{,*/}*.{scss,sass}", "<%= yeoman.app %>/styles/mixins/_*.sass", "<%= yeoman.app %>/styles/partials/_*.sass"]
         tasks: ["compass:dist"]
 
       livereload:

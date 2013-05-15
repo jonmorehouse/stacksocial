@@ -1,0 +1,39 @@
+#forkme
+	
+	@include fade_in(6s)	
+	position: fixed
+	top: 0
+	left: 0
+	height: 150px
+	width: 150px
+
+	> a
+
+		position: relative
+		height: 100%
+		width: 100%
+		cursor: pointer
+		display: block
+		background: image-url("logos/forkme.png", false, false)
+		background-repeat: none
+		background-size: 100% 100%
+		border-bottom-right-radius: 50%
+
+
+#header
+
+	@include push(2)
+	@include span-columns(8)
+
+	> h1, > h2
+
+		@include center
+		padding: 0.5em 0
+		@include header_font(3.5em)
+		color: white
+
+
+	> h2
+
+		@include header_font(2.2em)
+		padding: 0.5em

@@ -1,9 +1,55 @@
+@import url(http://fonts.googleapis.com/css?family=Happy+Monkey)
+@import url(http://fonts.googleapis.com/css?family=Happy+Monkey|Bowlby+One)
+@import url(http://fonts.googleapis.com/css?family=Kavoon)
+@import url(http://fonts.googleapis.com/css?family=Didact+Gothic)
+
+// primary elements
+@mixin light_font($font-size: 1em)
+	
+	@include base_font($font-size)
+	color: white
+
+
+	
+// header font
+@mixin header_font($font-size: 1.5em)
+
+	@include base_font($font-size)
+	color: $blue
+	font-family: 'Kavoon'
+	background: -webkit-linear-gradient(#eee, #333)
+	-webkit-background-clip: text
+	line-height: 1.1em
+	text-shadow: 2px 2px 2px black
+	letter-spacing: 2px
+
+// 
+@mixin plain_header_font($font-size: 1.5em)
+	
+	@include plain_font($font-size)	
+	color: white
+	text-shadow: 1px 1px 1px black	
+
+@mixin plain_text_font($font-size: 1.2em)
+	
+	@include plain_font($font-size)
+	color: white
+
+// plain font 	
+@mixin plain_font($font-size)
+
+	color: white
+	font-family: "Didact Gothic", arial
+	font-size: $font-size
+
+
+
+// 
 @mixin base_font($font-size: 1em)
 		
 	font-family: helvetica, arial, sans-serif
-	font-size: 1em
-	color: $dark_gray
+	font-size: $font-size
 	
-// set up fonts / typography etc
-@import compass/css3
+
+
 
