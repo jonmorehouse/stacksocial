@@ -3,6 +3,7 @@
 # that being said, this should be able to be plugged back into a rails app if necessary ...
 # please consult gruntfile.js in root for more information / configuration
 require 'compass'
+require 'compass-colors'
 require 'susy'
 require 'animate-sass'
 require 'stitch'

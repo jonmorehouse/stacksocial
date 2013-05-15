@@ -33,7 +33,7 @@ group :assets do
 end
 
 # intialize some testing gems etc
-group :development, :assets do
+group :development, :test do
 
 
 	gem 'debugger'
