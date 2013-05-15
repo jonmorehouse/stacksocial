@@ -9,14 +9,17 @@
 		- @config[:stylesheets].each do |s|
 
 			= stylesheet_link_tag s
-			
 
 	%body
 
-		= render 'partials/header'
+		#layout
 
-		#home		
-			= yield
+			= render 'partials/header'
+
+			#home		
+				= yield
+
+			#layout_footer
 
 		= render 'partials/footer'	
 

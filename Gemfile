@@ -30,6 +30,8 @@ group :assets do
 
 	gem 'susy'
 
+	gem 'stitch'
+
 end
 
 # intialize some testing gems etc

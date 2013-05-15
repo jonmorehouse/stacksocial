@@ -12,7 +12,7 @@
 class HomeController < ApplicationController
 
 	# place stylesheets etc that we need here
-	before_filter lambda{ page_config "home", (production?) ? nil : ["home"] }
+	before_filter lambda{ page_config "home", (production?) ? nil : ["home", "footer"] }
 
 	def index
 

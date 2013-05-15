@@ -1,5 +1,43 @@
 // initialize all elements and configuration etc
 // initialize all colors, mixins that need to be globally imported and all susy configuration settings here
+@import "compass"
+// @import "compass/reset"
+@import "compass/layout"
+@import "compass/utilities"
+
+// Font Sizes --------------------------------------------------------------
+$relative-font-sizing : false
+$base-font-size: 16px
+$base-line-height:24px
+
+// intialized application wide base settings
+@include establish-baseline
+
+// import susy grid system -- plus my custom settings for this project
+@import "susy"
+$total-columns: 12
+
+// use my custom github animations library! 
+@import "animate"
+// use stitch helper library
+@import "stitch"
+
+// now initialize colors for use in the application etc
+$dark_gray: rgba(36,36,36, 1)
+
+
+
+// initialize basic layout elements etc
+body
+	
+	width: 100%
+	margin: 0
+	padding: 0
+
+#layout
+
+	width: 100%
+	@include container
 
 
 
