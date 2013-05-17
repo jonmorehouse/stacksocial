@@ -11,4 +11,6 @@ define ['angular_bootstrap'], (app) ->
 
 			name: "Jon's Friend"
 
-			
+	
+		# handle some on click functionality etc			
+		# different elements here

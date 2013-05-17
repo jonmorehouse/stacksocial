@@ -2153,15 +2153,15 @@ body { width: 100%; margin: 0; padding: 0; background: url('/images/global_backg
 #layout:after { content: ""; display: table; clear: both; }
 
 /* line 1, ../../app/assets/styles/partials/_header.sass */
-#forkme { -webkit-animation: fade_in 3s; -moz-animation: fade_in 3s; position: fixed; top: 0; left: 0; height: 150px; width: 150px; }
-/* line 10, ../../app/assets/styles/partials/_header.sass */
+#forkme { -webkit-animation: fade_in 3s; -moz-animation: fade_in 3s; position: fixed; top: 0; left: 0; height: 150px; width: 150px; border-bottom-right-radius: 50px; }
+/* line 11, ../../app/assets/styles/partials/_header.sass */
 #forkme > a { position: relative; height: 100%; width: 100%; cursor: pointer; display: block; background: url('/images/logos/forkme.png'); background-repeat: none; background-size: 100% 100%; border-bottom-right-radius: 50%; }
 
-/* line 22, ../../app/assets/styles/partials/_header.sass */
+/* line 23, ../../app/assets/styles/partials/_header.sass */
 #header { margin-left: 16.94915%; width: 66.10169%; float: left; margin-right: 1.69492%; display: inline; -webkit-animation: rise 2s; -moz-animation: rise 2s; -o-animation: rise 2s; animation: rise 2s; }
-/* line 28, ../../app/assets/styles/partials/_header.sass */
+/* line 29, ../../app/assets/styles/partials/_header.sass */
 #header > h1, #header > h2 { display: block; margin: 0 auto; text-align: center; padding: 0.5em 0; font-family: helvetica, arial, sans-serif; font-size: 3.5em; color: #2578b4; font-family: "Kavoon"; background: -webkit-linear-gradient(#eeeeee, #333333); -webkit-background-clip: text; line-height: 1.1em; text-shadow: 2px 2px 2px black; letter-spacing: 2px; color: white; }
-/* line 36, ../../app/assets/styles/partials/_header.sass */
+/* line 37, ../../app/assets/styles/partials/_header.sass */
 #header > h2 { font-family: helvetica, arial, sans-serif; font-size: 2.2em; color: #2578b4; font-family: "Kavoon"; background: -webkit-linear-gradient(#eeeeee, #333333); -webkit-background-clip: text; line-height: 1.1em; text-shadow: 2px 2px 2px black; letter-spacing: 2px; padding: 0.5em; }
 
 /* line 10, ../../../../../.rvm/gems/ruby-2.0.0-p0@social/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */

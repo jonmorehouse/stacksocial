@@ -29,7 +29,6 @@ group :assets do
 	gem 'sassy-buttons'
 
 	gem 'susy'
-
 	gem 'stitch'
 
 end

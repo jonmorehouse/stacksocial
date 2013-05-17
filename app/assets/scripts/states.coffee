@@ -14,7 +14,6 @@ define ['angular_bootstrap', 'controllers/controllers'], (app, controllers) ->
 	# ask for access to the global stateprovider, routerpvider, urlrouterProvider and pass them to a function
 	app.config ['$stateProvider', '$routeProvider', '$urlRouterProvider', ($stateProvider, $routeProvider, $urlRouterProvider) ->
 
-
 		# now actually set the views above to be globally applied in this scope
 		$stateProvider.state 'user', 
 
@@ -28,7 +27,7 @@ define ['angular_bootstrap', 'controllers/controllers'], (app, controllers) ->
 				profile: 
 
 					templateUrl: 'partials/user'
-					controller: 'UserController'		
+					controller: 'UserController'	
 
 				# search is what truly triggers our search functionality!
 				search:
@@ -37,9 +36,9 @@ define ['angular_bootstrap', 'controllers/controllers'], (app, controllers) ->
 					controller: 'SearchController'
 
 				# at first its going to be the basic tweets etc
-				results: 	
+				items: 	
 
 					templateUrl: 'partials/tweets'
-
-
+					controller: 'ItemController'
+					
 	]

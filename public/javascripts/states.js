@@ -13,8 +13,9 @@
               templateUrl: 'partials/search',
               controller: 'SearchController'
             },
-            results: {
-              templateUrl: 'partials/tweets'
+            items: {
+              templateUrl: 'partials/tweets',
+              controller: 'ItemController'
             }
           }
         });
