@@ -10,7 +10,7 @@ config =
 		angular: "/components/angular/angular"
 		underscore: "/components/underscore/underscore"
 		angularResource: "/components/angular-resource/angular-resource"
-		angularRouter: "/components/angualar-ui-router/"
+		angularStates: "/components/angualar-ui-router/build/angular-ui-states"
 
 		# load in facebook sdk etc
 		facebook: "//connect.facebook.net/en_US/all.js#xfbml=1"
@@ -23,6 +23,11 @@ config =
 		angular: 
 
 			exports: "angular"
+
+		# angular states global element
+		angularStates: 
+
+			exports: "ui.compat"
 
 		# initialize facebook sdk element
 		facebook:

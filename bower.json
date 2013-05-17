@@ -8,7 +8,8 @@
 		"jquery": "latest",
 		"angular": "latest",
 		"angular-resource": "latest",
-		"underscore": "underscore"
+		"underscore": "underscore",
+		"angular-ui-router": "latest"
 
 	},
 

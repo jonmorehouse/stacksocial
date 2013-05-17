@@ -10,6 +10,8 @@ require ['bootstrap'], ->
 		'angular', 
 		# initialize angular bootstrap which gives our application module
 		'angular_bootstrap',
+		'angularResource',
+		'angularStates',
 		# initialize jquery -- not really needeed for application but for some reason I coudln't get angular.element(document).ready to call without it
 		'jquery',
 		# initialize our application controller for this piece
