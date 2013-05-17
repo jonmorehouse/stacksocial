@@ -5,12 +5,16 @@
 "
 define ['angular_bootstrap'], (app) ->
 
-	app.controller 'UserController', ['$scope', '$location', ($scope, $location) ->
+	app.controller 'UserController', ['$scope', '$location', '$resource', ($scope, $location, $resource) ->
 
-		$scope.currentUser = 
-			
-			name: "Jon Morehouse"	
+		# 
+		User = $resource '/api/user'
 
-			
+		# get user tweets
+		Tweets = $resource '/api/search/user_tweets'
+
+		# 
+		$scope.currentUser = User.get {}, () ->
+
 	]
 
