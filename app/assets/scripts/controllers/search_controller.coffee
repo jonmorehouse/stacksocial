@@ -3,7 +3,6 @@
 	The idea is that we link the ng-model for search to the keywords and what elements we want
 	We need to have some sort of resource which will determine what type of search we are completing
 "
-
 define ['angular_bootstrap'], (app) -> 
 
 	app.controller 'SearchController', ['$scope', '$location', ($scope, $location)->

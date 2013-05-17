@@ -1,6 +1,6 @@
 (function() {
-  define(['angular', 'angularResource'], function(angular, angularResource) {
-    return angular.module('app', ['ngResource']);
+  define(['angular', 'angularResource', 'angularStates'], function(angular, angularResource, angularStates) {
+    return angular.module('app', ['ngResource', 'ui.compat']);
   });
 
 }).call(this);
