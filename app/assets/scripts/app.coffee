@@ -28,10 +28,10 @@ require ['bootstrap'], ->
 			angular.bootstrap document, ['app']
 
 			# now that its bootstrapped, we need to initialize the angular-ui-router to use this properly
-			app.run ['$rootScope', '$state', '$stateParams'], ($rootScope, $state, $stateParams) ->
+			# app.run ['$rootScope', '$state', '$stateParams'], ($rootScope, $state, $stateParams) ->
 
-				$rootScope.$state = $state
-				$rootScope.$stateParams = $stateParams
+			# 	$rootScope.$state = $state
+			# 	$rootScope.$stateParams = $stateParams
 
 
 				

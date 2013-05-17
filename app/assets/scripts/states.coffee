@@ -12,7 +12,7 @@
 define ['angular_bootstrap', 'controllers/controllers'], (app, controllers) ->
 
 	# ask for access to the global stateprovider, routerpvider, urlrouterProvider and pass them to a function
-	app.config ['$stateProvider', '$routeProvider', '$urlRouterProvider'], ($stateProvider, $routeProvider, $urlRouterProvider) ->
+	app.config ['$stateProvider', '$routeProvider', '$urlRouterProvider', ($stateProvider, $routeProvider, $urlRouterProvider) ->
 
 
 		# now actually set the views above to be globally applied in this scope
@@ -40,3 +40,6 @@ define ['angular_bootstrap', 'controllers/controllers'], (app, controllers) ->
 				results: 	
 
 					templateUrl: 'partials/tweets'
+
+
+	]
