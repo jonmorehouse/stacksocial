@@ -8,6 +8,7 @@
       angular: "/components/angular/angular",
       underscore: "/components/underscore/underscore",
       angularResource: "/components/angular-resource/angular-resource",
+      angularRouter: "/components/angualar-ui-router/",
       facebook: "//connect.facebook.net/en_US/all.js#xfbml=1",
       twitter: "http://platform.twitter.com/widgets"
     },
