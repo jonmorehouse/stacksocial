@@ -1,4 +1,6 @@
 / this is the view place holder for our data on the left side of hte page
-#profile{:"ng-view"=>""}
+#profile{:"ng-view"=>"profile"}
 
-#search{:"ng-model" => "search", :"ng-controller" => "SearchController"}	
+#search{:"ng-view" => "search"}
+
+#results{:"ng-view" => "results"}

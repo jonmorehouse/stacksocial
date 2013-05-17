@@ -17,5 +17,4 @@ define ['angular_bootstrap'], (app) ->
 
 				# elements go in here for returning etc
 			]
-
 	]

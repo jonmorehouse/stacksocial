@@ -17,13 +17,21 @@ require ['bootstrap'], ->
 		# initialize our application controller for this piece
 		'controllers/controllers',
 		# initialize basic routing etc
-		'router'
+		"states"
 		
 	], (angular, app) ->
 
 		# wait for angular document body to be ready
 		angular.element(document).ready () ->
 
+			# bootstrap our scope to the correct element that we are working with
 			angular.bootstrap document, ['app']
+
+			# now that its bootstrapped, we need to initialize the angular-ui-router to use this properly
+			app.run ['$rootScope', '$state', '$stateParams'], ($rootScope, $state, $stateParams) ->
+
+				$rootScope.$state = $state
+				$rootScope.$stateParams = $stateParams
+
 
 				

@@ -11,20 +11,32 @@
 
 define ['angular_bootstrap', 'controllers/controllers'], (app, controllers) ->
 
+	# ask for access to the global stateprovider, routerpvider, urlrouterProvider and pass them to a function
 	app.config ['$stateProvider', '$routeProvider', '$urlRouterProvider'], ($stateProvider, $routeProvider, $urlRouterProvider) ->
 
-		$routeProvider.when('/search/:type', {
-			redirectTo: '/'
-		})
 
-		$routeProvider.when('/', {
+		# now actually set the views above to be globally applied in this scope
+		$stateProvider.state 'user', 
 
-		})
+			url:
+				'/'
+				
+			# initialize views for base user element
+			views: 
 
-		$stateProvider.state('/', {
+				# initialize our base user profile page
+				profile: 
 
-			url: '/'
-			templateUrl: 
+					templateUrl: 'partials/user'
+					controller: 'UserController'		
 
+				# search is what truly triggers our search functionality!
+				search:
 
-		})
+					templateUrl: 'partials/search'	
+					controller: 'SearchController'
+
+				# at first its going to be the basic tweets etc
+				results: 	
+
+					templateUrl: 'partials/tweets'
