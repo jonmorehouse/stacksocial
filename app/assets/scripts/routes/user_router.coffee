@@ -1,4 +1,4 @@
-"
+###
 	A few notes, 
 	1.) routeProvider is a shim that implements the current angularjs $route / $routeProvider on top of $stateProvider
 	2.) routeProvider connects the state to the route etc
@@ -7,7 +7,7 @@
 
 	# great resource!
 	https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views
-"
+###
 define ['angular_bootstrap', 'controllers/controllers'], (app, controllers) ->
 
 	# ask for access to the global stateprovider, routerpvider, urlrouterProvider and pass them to a function

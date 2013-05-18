@@ -1,3 +1,10 @@
+/*
+	This file is responsible for being called by individual application page files for require.js
+	All basic require js configuration is done here and we can declare settings / environments etc
+	Shims and dependencies are especially noted and this file has been debugged as there was a priority loading issue before
+*/
+
+
 (function() {
   var config;
 

@@ -1,5 +1,10 @@
+/*
+	Initialize main application logic using require.js and angular bootstrapped here
+*/
+
+
 (function() {
-  "	Initialize main application logic using require.js and angular bootstrapped here";  require(['bootstrap'], function() {
+  require(['bootstrap'], function() {
     return require(['jquery'], function($) {
       return $(document).ready(function() {
         return require(['angular', 'angular_bootstrap', 'angularResource', 'angularStates', 'controllers/controllers', 'routes/router'], function(angular, app) {

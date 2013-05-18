@@ -1,7 +1,7 @@
-"
+###
 	Initialize all different routers for the search functionality!
 	This is the element that should respond to the different search elements etc
-"
+###
 
 define ['angular_bootstrap', 'controllers/controllers'], (app, controllers) ->
 
@@ -11,7 +11,7 @@ define ['angular_bootstrap', 'controllers/controllers'], (app, controllers) ->
 
 			url: 
 
-				'/'
+				'/search/'
 
 			views:
 

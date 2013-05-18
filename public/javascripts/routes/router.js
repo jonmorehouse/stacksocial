@@ -1,4 +1,9 @@
+/*
+	Initialize a basic route initializer
+*/
+
+
 (function() {
-  "	Initialize a basic route initializer";  define(['routes/user_router', 'routes/search_router'], function() {});
+  define(['routes/user_router', 'routes/search_router'], function() {});
 
 }).call(this);

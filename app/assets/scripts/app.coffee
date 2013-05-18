@@ -1,7 +1,7 @@
-"
+###
 	Initialize main application logic using require.js and angular bootstrapped here
 
-"
+###
 require ['bootstrap'], ->
 
 	require ['jquery'], ($) ->

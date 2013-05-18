@@ -1,9 +1,15 @@
+/*
+	Initialize all different routers for the search functionality!
+	This is the element that should respond to the different search elements etc
+*/
+
+
 (function() {
-  "	Initialize all different routers for the search functionality!	This is the element that should respond to the different search elements etc";  define(['angular_bootstrap', 'controllers/controllers'], function(app, controllers) {
+  define(['angular_bootstrap', 'controllers/controllers'], function(app, controllers) {
     return app.config([
       '$stateProvider', '$routeProvider', '$urlRouterProvider', function($stateProvider, $routeProvider, $urlRouterProvider) {
         return $stateProvider.state('search', {
-          url: '/',
+          url: '/search/',
           views: {
             search: {
               templateUrl: 'partials/search',
