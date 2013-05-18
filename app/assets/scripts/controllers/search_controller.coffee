@@ -9,12 +9,14 @@ define ['angular_bootstrap'], (app) ->
 
 		$scope.search =
 
-			keywords: "Twitter Search"
-
+			search: "Twitter Search"
 			# declare whether we are working with a hash / user  
-			type: "hash"
+			type: "Tweets / Users"
 			results: [
 
 				# elements go in here for returning etc
+
 			]
+
+			
 	]

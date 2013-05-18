@@ -40,7 +40,3 @@ define ['angular_bootstrap', 'controllers/controllers'], (app, controllers) ->
 					controller: 'ItemController'
 					
 	]
-
-
-
-

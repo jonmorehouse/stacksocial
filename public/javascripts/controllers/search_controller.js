@@ -3,8 +3,8 @@
     return app.controller('SearchController', [
       '$scope', '$location', function($scope, $location) {
         return $scope.search = {
-          keywords: "Twitter Search",
-          type: "hash",
+          search: "Twitter Search",
+          type: "Tweets / Users",
           results: []
         };
       }
