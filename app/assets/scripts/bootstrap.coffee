@@ -1,6 +1,8 @@
 # declare our require js config json object
 config = 
 
+	# baseUrl: "javascripts/"
+
 	# set this true / false to set up api loading from external sources
 	status: false
 

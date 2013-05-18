@@ -8,7 +8,6 @@
 	# great resource!
 	https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views
 "
-
 define ['angular_bootstrap', 'controllers/controllers'], (app, controllers) ->
 
 	# ask for access to the global stateprovider, routerpvider, urlrouterProvider and pass them to a function
@@ -19,7 +18,6 @@ define ['angular_bootstrap', 'controllers/controllers'], (app, controllers) ->
 
 			url:
 				'/'
-				
 			# initialize views for base user element
 			views: 
 
@@ -42,3 +40,7 @@ define ['angular_bootstrap', 'controllers/controllers'], (app, controllers) ->
 					controller: 'ItemController'
 					
 	]
+
+
+
+
