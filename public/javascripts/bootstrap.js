@@ -16,6 +16,9 @@
       angular: {
         exports: "angular"
       },
+      angularResource: {
+        deps: ['angular']
+      },
       angularStates: {
         deps: ['angular']
       },
@@ -24,14 +27,10 @@
       },
       twitter: {
         exports: "twttr"
-      },
-      angularResource: {
-        deps: ['jquery'],
-        exports: 'angularResource'
-      },
-      priority: ["angular", "facebook"],
-      urlArgs: 'v=0.1'
-    }
+      }
+    },
+    priority: ["angular", "facebook"],
+    urlArgs: 'v=0.1'
   };
 
   require.config(config);

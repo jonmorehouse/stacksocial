@@ -26,6 +26,10 @@ config =
 
 			exports: "angular"
 
+		angularResource:
+
+			deps: ['angular']
+
 		# angular states global element
 		angularStates: 
 
@@ -39,13 +43,10 @@ config =
 		twitter:
 			exports: "twttr"
 
-		# angularResource element for grabbing data from the server etc
-		angularResource:
-			deps: ['jquery']
-			exports: 'angularResource'
-
-		priority: ["angular", "facebook"]	
-		urlArgs: 'v=0.1'
+	# make sure that we seperate this and require that angular is loaded up first!
+	priority: ["angular", "facebook"]	
+	# initailize our url args etc	
+	urlArgs: 'v=0.1'
 
 # pass the config json object to the require config function
 require.config config

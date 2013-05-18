@@ -1,4 +1,12 @@
-h1(ng-model="search")= "Search {{search.type}}"
+#search(ng-controller='SearchController')
 
-input(type='text', name='search', ng-model="search", value='{{search.search}}')
+	h1(ng-model="search")
+		{{search.type}} ASDFL
+
+	//- initialize the search form
+	form(name='search')
+
+		input(type='text', name='search', ng-model="search.current", ng-change="change()", value='{{search.current}}')
+
+
 

@@ -7,9 +7,9 @@ define [
 	'controllers/search_controller'
 
 ], () ->
-
+	
 	# do some base extensions on the controllers etc here!
-
+	
 
 
 		

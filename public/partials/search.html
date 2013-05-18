@@ -1,3 +1,7 @@
 
-<h1 ng-model="search">Search {{search.type}}</h1>
-<input type="text" name="search" ng-model="search" value="{{search.search}}"/>
+<div id="search" ng-controller="SearchController">
+  <h1 ng-model="search">{{search.type}} ASDFL</h1>
+  <form name="search">
+    <input type="text" name="search" ng-model="search.current" ng-change="change()" value="{{search.current}}"/>
+  </form>
+</div>

@@ -3,5 +3,5 @@ define ['angular', 'angularResource', 'angularStates'], (angular, angularResourc
 
 	# initialize our angular app as a module
 	return angular.module 'app', ['ngResource', 'ui.compat']
-
+	
 		
