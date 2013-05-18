@@ -38,5 +38,7 @@ define ['angular_bootstrap', 'controllers/controllers'], (app, controllers) ->
 
 					templateUrl: 'partials/tweets'
 					controller: 'ItemController'
-					
+		
+		# set the application to ensure htat we are 	
+		$urlRouterProvider.otherwise '/'				
 	]

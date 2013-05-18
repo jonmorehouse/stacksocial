@@ -6,10 +6,7 @@
 
         User = $resource('/api/user');
         Tweets = $resource('/api/search/user_tweets');
-        $scope.currentUser = User.get({}, function() {});
-        return $scope.init = function() {
-          return $scope.currentUser = User.get({}, function() {});
-        };
+        return $scope.currentUser = User.get({}, function() {});
       }
     ]);
   });

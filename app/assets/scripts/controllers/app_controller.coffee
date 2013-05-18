@@ -5,13 +5,11 @@
 "
 define ['angular_bootstrap'], (app) ->
 
-	app.controller 'AppController', ['$scope', '$location', '$resource', ($scope, $location, $resource) ->
+	app.controller 'AppController', ['$rootScope', '$location', '$resource', ($scope, $location, $resource) ->
 
 		$scope.currentUser =
-
+			
 			name: "Jon Morehouse"
-
-
 
 
 

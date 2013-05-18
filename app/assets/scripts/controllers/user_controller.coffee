@@ -6,7 +6,7 @@
 define ['angular_bootstrap'], (app) ->
 
 	# initialize app controller etc
-	app.controller 'UserController', ['$scope', '$location', '$resource', ($scope, $location, $resource) ->
+	app.controller 'UserController', ['$rootScope', '$location', '$resource', ($scope, $location, $resource) ->
 
 		# 
 		User = $resource '/api/user'
@@ -15,10 +15,5 @@ define ['angular_bootstrap'], (app) ->
 		Tweets = $resource '/api/search/user_tweets'
 
 		$scope.currentUser = User.get {}, () ->
-
-		# initialize our values from teh server
-		$scope.init = ->	
-
-			$scope.currentUser = User.get {}, () ->
 
 	]

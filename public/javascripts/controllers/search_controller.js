@@ -6,7 +6,9 @@
           current: "Twitter Search",
           type: "Tweets / Users"
         };
-        return $scope.change = function() {};
+        return $scope.change = function() {
+          return $scope.search.results = ["A", "B", "C"];
+        };
       }
     ]);
   });

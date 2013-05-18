@@ -2,7 +2,8 @@
 # require pulls it in under a closure
 define [
 
-	'angular_bootstrap'
+	'angular_bootstrap',
+	'controllers/app_controller',
 	'controllers/user_controller', 
 	'controllers/public_user_controller',
 	'controllers/search_controller'
