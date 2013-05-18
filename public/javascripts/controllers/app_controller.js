@@ -26,7 +26,11 @@
           }
           return true;
         };
-        return $scope.$watch(locationPath, function(newValue, oldValue) {});
+        return $scope.$watch(locationPath, function(newValue, oldValue) {
+          if (!loggedIn()) {
+            return window.location.href = "/logout";
+          }
+        });
       }
     ]);
   });

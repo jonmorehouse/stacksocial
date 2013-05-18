@@ -15,21 +15,21 @@ define ['angular_bootstrap'], (app) ->
 
 		# declare high level profile / data etc
 		$scope.currentProfile = {}
+		
 		# 
 		$scope.currentData = {}
 
-
-		# DECLARE A LOGIN WATCHER! ETC!
+		# grab location path etc
 		locationPath = ->
 			return $location.path()
 
 		# check user here - if the user is not logged in go ahead and redirect them
 		loggedIn = () ->
 
+			# we can do some other logic here as well and then we can control scoping on this element etc
 			return false if not $scope.currentUser.loggedIn
 
 			return true
-
 
 		# check loggedIn anytime the application changes etc ...
 		$scope.$watch locationPath, (newValue, oldValue) ->  
@@ -38,7 +38,6 @@ define ['angular_bootstrap'], (app) ->
 			# $scope.$apply($location.path('/login')) if not loggedIn()
 
 			# alternatively we can do the location change to force a new signin
-			# window.location.href = "/"
-			# window.location.href = "http://stacksocial.dev/"
+			window.location.href = "/logout" if not loggedIn()
 
 	]
