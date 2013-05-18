@@ -5,16 +5,8 @@
 "
 define ['angular_bootstrap'], (app) ->
 
-	app.controller 'UserController', ['$scope', ($scope) ->
-
-		$scope.currentUser = 
-
-			name: "Jon Morehouse"
-
-	]	
-
 	# initialize app controller etc
-	app.controller 'UserControllerOLD', ['$scope', '$location', '$resource', ($scope, $location, $resource) ->
+	app.controller 'UserController', ['$scope', '$location', '$resource', ($scope, $location, $resource) ->
 
 		# 
 		User = $resource '/api/user'

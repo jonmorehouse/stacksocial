@@ -5,26 +5,18 @@
 "
 define ['angular_bootstrap'], (app) -> 
 
-	app.controller 'SearchController', ['$scope', '$location', ($scope, $location)->
+	app.controller 'SearchController', ['$rootScope', '$location', ($scope, $location)->
 
 		$scope.search =
 
-			test: "alk;sdfjasdf"
 			current: "Twitter Search"
 			# declare whether we are working with a hash / user  
 			type: "Tweets / Users"
-			results: [
-
-				# elements go in here for returning etc
-			]
+			# results
 
 		$scope.change = () ->
 			
-			alert "HELLO WORLD"	
-			
-			$scope.search.results = "get results!"
-			$scope.search.test = "Jon Morehouse<br />"
-
+			$scope.search.results = ["A", "B", "C"]
 					
 			
 	]

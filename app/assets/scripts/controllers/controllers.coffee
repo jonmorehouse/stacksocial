@@ -2,14 +2,14 @@
 # require pulls it in under a closure
 define [
 
+	'angular_bootstrap'
 	'controllers/user_controller', 
 	'controllers/public_user_controller',
 	'controllers/search_controller'
 
-], () ->
+], (app) ->
 	
 	# do some base extensions on the controllers etc here!
 	
-
 
 		
