@@ -21,7 +21,17 @@ describe User do
 		@badKey[:credentials][:token] = Faker::Lorem.characters 20
 
 		# now set up the badParams needed for our basic 
-		@badParams = @good.clone
+		@badParams = @good.clone.delete :credentials
+
+	end
+
+	describe "User creation" do
+
+		it "has a valid factory" do
+						
+
+
+		end
 
 	end
 		
