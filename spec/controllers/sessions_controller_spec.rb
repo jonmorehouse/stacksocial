@@ -13,17 +13,14 @@ describe SessionsController do
 		request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:twitter] 
 	end
 
-	it "Successfuly create a new user" do
+	describe "Post sessions#create" do
 
-		# grab the authentication
-		auth = request.env["omniauth.auth"]
+		it "Should create a user profile!" do	
 
-		# attempt to initialize a user
-		# user = User.new auth 
+			post :create, :provider => "twitter"
+			puts response.body
 
-		puts auth
-
+		end
 	end
-
 
 end

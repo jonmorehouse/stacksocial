@@ -38,8 +38,10 @@ class SessionsController < ApplicationController
 		# now set the session_id 
 		session[:user_id] = user.id
 
+		render :json => user
+
 		# redirect back to the root which can successfully switch the pages of the application etc
-		redirect_to root_url, :notice => "Successful Authentication"	
+		# redirect_to root_url, :notice => "Successful Authentication"	
 
 	end
 
@@ -63,5 +65,11 @@ class SessionsController < ApplicationController
 		# we want to redirect to our root element in the application etc
 		redirect_to root_url, :notice => "Successfully Signed Out"
 
+	end
+
+	def test
+
+		render :json => {"message" => "HELLO WORLD"}
+		
 	end
 end

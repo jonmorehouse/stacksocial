@@ -31,6 +31,8 @@ RSpec.configure do |config|
   # config.infer_base_class_for_anonymous_controllers = false
 
   OmniAuth.config.test_mode = true
+
+  # generate a valid twitter authentication using my application.yml configuration etc
   OmniAuth.config.mock_auth[:twitter] = {
 
     :provider => "twitter",
@@ -39,7 +41,6 @@ RSpec.configure do |config|
       :token => ENV['TWITTER_ACCESS_TOKEN'], 
       :secret => ENV['TWITTER_ACCESS_TOKEN_SECRET']
     }
-    
   }
 
   # Run specs in random order to surface order dependencies. If you find an

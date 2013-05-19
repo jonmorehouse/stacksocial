@@ -34,7 +34,6 @@ class User
       user.profile()
 
     end
-
   end
 
 

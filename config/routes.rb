@@ -1,6 +1,6 @@
 Stacksocial::Application.routes.draw do
 
-  match "/auth/:provider/callback" => 'sessions#create'
+  match "/auth/:provider/callback" => 'sessions#create', :as => :create_user
 
   match "/auth/failure" => "sessions#failure" 
 
