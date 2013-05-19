@@ -20,61 +20,31 @@ class User
   # include our basic mongoid elemental structure
   include Mongoid::Document
   # include our twitter concern etc
+  # include Concerns::Twitter
   include Twitter
+  include Profile
 
-  	# initialize our basic credentials etc
-  	field :uid, type: String
-  	field :key, type: String
-  	field :secret, type: String
+  ######## CLASS METHODS #############
+  # class method
+  def self.user(id)
 
-  	# now store our basic elements that we want to have accessible via our api	
-  	# this will be a list of all the follower's were currently working with!
-  	# these are all pointers to 
-  	field :followers, type: Array
-  	field :following, type: Array
-    field :name, type: String
-    field :description, type: String
-    field :profile_url, type: String
+    # return a user based on the id input
 
-  	# 
-  	has_many :tweets
+  end
 
-    ######## CLASS METHODS #############
-    # class method
-    def self.user(id)
+  ############## OBJECT METHODS ############################
+  # constructor method for this particular element
+  def initialize(attrs = nil, options = nil)
 
-      # return a user based on the id input
+    super
 
-    end
+    # attempt to save the proper parameters
+    twitter options
 
+    # no go ahead and call the profile init function to setup our basic profile information
+    profile()
 
-    ############## OBJECT METHODS ############################
-    # constructor method for this particular element
-    def initialize(params)
-
-      puts "HELLO WORLD"
-      # attempt to save the proper parameters
-      begin
-
-        # initialize various parameter pieces into the actual model
-        # this is subject to change as the oauth elements change from twitter's omniauth implementation
-        self.uid = params.uid
-        self.key = params.credentials.token
-        self.secret = params.credentials.secret
-
-      # handle a bad login (improper elements with the proper message return)
-      rescue NoMethodError
-
-        # call our error function etc
-        self.error "Invalid signup"
-
-      # if all parameters are passed validly, we can go ahead and create our profile and save the document!
-      else
-
-        # save our profile and update the actual element etc
-        self.profile()
-      end
-    end
+  end
 
 
 

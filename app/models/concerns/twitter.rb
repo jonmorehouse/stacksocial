@@ -1,5 +1,4 @@
 module Twitter
-	include Mongoid::Document
 	extend ActiveSupport::Concern
 
 	included do
@@ -8,6 +7,8 @@ module Twitter
 	  	field :uid, type: String
 	  	field :key, type: String
 	  	field :secret, type: String
+
+	  	puts "Twitter Concern Init!"	
 
 	end
 
@@ -28,23 +29,23 @@ module Twitter
 
 	  	end
 
-	  	# set up a basic error handler
-	  	def error(message = nil)
+	  	# initialize twitter inititializer methods
+	  	def twitter(params)
 
-	  		puts "HELLO WORLD!"
-	  		return {
+	  		# save twitter params here etc
 
-	  			:status => false,
-	  			:message => message if message else "Invalid Twitter action"
-
-	  		}
 
 	  	end
 
-	  	# initialize user profile
-	  	def profile
+	  	# set up a basic error handler
+	  	def error(message = nil)
 
+	  		return {
 
+	  			:status => false,
+	  			# :message => message if message else "Invalid Twitter action"
+
+	  		}
 
 	  	end
 

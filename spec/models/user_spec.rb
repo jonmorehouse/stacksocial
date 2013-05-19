@@ -4,11 +4,15 @@ describe User do
 
 	before :each do
 
-		request.env["omniauth.auth"] => OmniAuth.config.mock_auth[:twitter]
+		# request.env["omniauth.auth"] => OmniAuth.config.mock_auth[:twitter]
 
 	end
 		
-			
+	it "Should do something cool" do		
+
+		pending "HELLO WORLD"
+
+	end
 
 
 
