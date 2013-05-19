@@ -35,6 +35,7 @@ class User
   # constructor method for this particular element
   def initialize(attrs = nil, options = nil)
 
+    # ensure that we initialize and create the mongoid document!
     super
 
     # attempt to save the proper parameters and initialize our twitter functionality!

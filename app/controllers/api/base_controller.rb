@@ -17,24 +17,26 @@ class Api::BaseController < ApplicationController
 
 		# create basic application logic here so that we can handle errors etc here properly	
 		# for now lets just render a basic element so that we can properly control what we are outputting to the caller
-		# error_handler exception
-		render :json => {:message => exception}
+		error_handler exception.message
 
 	end
 
-	before_filter :init
+	# before 
+	before_filter :current_user, :init
 
 	protected
 
+	# initialize our application logic / authentication logic
 	def init
 
-		raise ArgumentError, "HELLO WORLD ...."	
+		error_handler "Invalid Login." if not @user
 
 	end
 
-	def error_handler(message)
+	# explicit handler for all error rendering etc
+	def error_handler(exception)
 
-		render :json => {:message => message}
+		render :json => {:message => exception}
 
 	end
 

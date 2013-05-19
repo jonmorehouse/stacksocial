@@ -1,3 +1,13 @@
+"
+	This is the primary sessions controller that handles login / authentciation
+	The idea is that the user document only persists as long as the current session
+	We pass the entire omniauth middleware request to the user model for it to be handled properly
+
+	Logout is responsible for destroying user document
+
+	Note that I turned off mongoid's 'allow_dynamic_fields' option so that we don't have a bunch of extra data persisted to our db
+	Everything is handled manually in the model
+"
 class SessionsController < ApplicationController
 
 	before_filter :current_user, :only => [:destroy]
@@ -15,16 +25,15 @@ class SessionsController < ApplicationController
 		# grab the authentication return
 		auth = request.env["omniauth.auth"]
 
-		render :json => auth
-
 		# now create a temporary user with the auth element etc
-		user = User.create
+		# 
+		user = User.create auth
 
 		# now set the session_id 
-		# session[:user_id] = user.id
+		session[:user_id] = user.id
 
-		# 
-		# redirect_to root_url, :notice => "Successful Authentication"	
+		# redirect back to the root which can successfully switch the pages of the application etc
+		redirect_to root_url, :notice => "Successful Authentication"	
 
 	end
 

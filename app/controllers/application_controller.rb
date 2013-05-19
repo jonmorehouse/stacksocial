@@ -48,8 +48,17 @@ class ApplicationController < ActionController::Base
   	# get the current user element etc
   	def current_user
 
-      @user ||= User.find(session[:user_id]) if session[:user_id]
+      begin 
 
+        @user ||= User.find(session[:user_id]) if session[:user_id]
+
+      # if we have a mongoid error, handle it nicely and return 
+      # obviously, its not safe to capture all exceptions but this works fine for the simplicity of this application
+      rescue Mongoid::Errors::DocumentNotFound
+
+        nil
+
+      end
   	end
 
 
