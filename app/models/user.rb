@@ -36,9 +36,24 @@ class User
   	# has_many :followers
   	# has_many :following
 
+  	# set up our our twitter client for use
+  	def client
+
+  		# create the users twitter client and return it! as a new object
+  		return Twitter::Client.new(
+
+  			:consumer_key => ENV['TWITTER_KEY'],
+  			:consumer_secret => ENV['TWITTER_SECRET'],
+  			:oauth_token => key,
+  			:oauth_secret => secret,
+  		)
+
+  	end
+
  	def initialize(params) 
 
- 		puts "HELLO WORLD FROM THE USER INITIALIZATION ELEMENT"	
- 		
+ 		# make sure we have the proper parameters here!
+ 			
+
  	end
 end
