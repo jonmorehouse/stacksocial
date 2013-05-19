@@ -2,10 +2,9 @@ require 'spec_helper'
 
 describe Api::UserController do
 
-	before(:each) do
+	before do
 
-
-
+		request.env["omniauth.auth"] = Omniauth.config.mock_auth[:twitter]
 	end
 
 	describe "GET index" do	

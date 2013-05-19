@@ -6,6 +6,8 @@
 	error = throw error to the controller for later use
 	validate = validate current twitter information
 
+	One other note, InstanceMethods and ClassMethods modules are deprecated now, we can write these methods as vanilla methods
+
 	Current required keys = [
 
 		uid = twitter user id,
@@ -28,74 +30,66 @@ module Concerns::Twitter
 
 	end
 
-	# initialize instance methods for a single twitter element
-	module InstanceMethods
+	################ INSTANCE METHODS #####################
 
-	  	# set up our our twitter client for use
-	  	def client
+  	# set up our our twitter client for use
+  	def twitter
 
-	  		# create the users twitter client and return it! as a new object
-	  		return Twitter::Client.new(
+  		# create the users twitter client and return it! as a new object
+  		return Twitter::Client.new(
 
-	  			:consumer_key => ENV['TWITTER_KEY'],
-	  			:consumer_secret => ENV['TWITTER_SECRET'],
-	  			:oauth_token => self.key,
-	  			:oauth_secret => self.secret,
-	  		)
+  			:consumer_key => ENV['TWITTER_KEY'],
+  			:consumer_secret => ENV['TWITTER_SECRET'],
+  			:oauth_token => self.key,
+  			:oauth_token_secret => self.secret,
+  		)
 
-	  	end
+  	end
 
-	  	# initialize twitter inititializer methods
-	  	# this segment could change pending the twitter auth params and keys in the future
-	  	def twitter_init(params)
+  	# initialize twitter inititializer methods
+  	# this segment could change pending the twitter auth params and keys in the future
+  	def twitter_init(params)
 
-	  		# save twitter params here etc
-	  		begin 	
+  		# save twitter params here etc
+  		begin 	
 
-	  			self.uid = params.uid
-	  			self.key = params.credentials.token
-	  			self.secret = params.credentials.secret
+        self.uid = params.with_indifferent_access["uid"]
+  			self.key = params.with_indifferent_access["credentials"].with_indifferent_access["token"]
+  			self.secret = params.with_indifferent_access["credentials"].with_indifferent_access["secret"]
 
-	  		# attempt to catch the errors that exist
-	  		rescue # NoMethodError
+  		# attempt to catch the errors that exist
+  		rescue # NoMethodError
 
-	  			"
-	  				We had an error here that we need to throw a proper failure etc and control properly
-	  			"
-	  			raise StandardError, "Invalid Oauth Params"	
+  			"
+  				We had an error here that we need to throw a proper failure etc and control properly
+  			"
+  			raise StandardError, "Invalid Oauth Params"	
 
-	  		# if we have the correct credentials for our various methods etc, lets go ahead and try to run the client element and initialize our twitter functionality
-	  		else
+  		# if we have the correct credentials for our various methods etc, lets go ahead and try to run the client element and initialize our twitter functionality
+  		else
 
-	  			client()
+        twitter()
 
-	  		end
+  		end
 
-	  	end
+  	end
 
-	  	# set up a basic error handler
-	  	def error(message = nil)
-	  		
-	  		"
-	  			Throw error here so that we can catch within our controller elements
-	  		"
-	  		
-	  		return {
+  	# set up a basic error handler
+  	def error(message = nil)
+  		
+  		"
+  			Throw error here so that we can catch within our controller elements
+  		"
+  		
+  		return {
 
-	  			:status => false,
-	  			# :message => message if message else "Invalid Twitter action"
+  			:status => false,
+  			# :message => message if message else "Invalid Twitter action"
 
-	  		}
+  		}
 
-	  	end
+  	end
 
-	end
-
-	# initialize twitter class methods etc
-	module ClassMethods
-
-		# class methods etc for global access
-
-	end
+	################ CLASS METHODS #####################
 
 end

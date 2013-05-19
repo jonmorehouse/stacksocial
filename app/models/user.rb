@@ -31,7 +31,6 @@ class User
     create! do |user|
 
       user.twitter_init params
-      user.profile()
 
     end
   end

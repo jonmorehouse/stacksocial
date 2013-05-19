@@ -22,16 +22,16 @@ module Concerns::Profile
 
 	end
 
-	module InstanceMethods
+	def get_profile
 
-		def profile
-
-			puts "HELLO FROM PROFILE INIT"	
-
-
-		end
-
+		# get our twitter client
+		twitter = twitter()
+		self.followers = twitter.followers
+		self.description = twitter.user.description
+		self.name = twitter().friends
 
 	end
+
+
 
 end
