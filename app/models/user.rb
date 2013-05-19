@@ -7,7 +7,8 @@
 class User
   include Mongoid::Document
 
- 	def initialize(params) 
+ 	def initialize() 
+
 
  		
 

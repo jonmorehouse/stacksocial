@@ -15,14 +15,16 @@ class SessionsController < ApplicationController
 		# grab the authentication return
 		auth = request.env["omniauth.auth"]
 
+		render :json => auth
+
 		# now create a temporary user with the auth element etc
-		user = User.create
+		# user = User.create
 
 		# now set the session_id 
-		session[:user_id] = user.id
+		# session[:user_id] = user.id
 
 		# 
-		redirect_to root_url, :notice => "Successful Authentication"	
+		# redirect_to root_url, :notice => "Successful Authentication"	
 
 	end
 
@@ -38,7 +40,7 @@ class SessionsController < ApplicationController
 	def destroy
 
 		# destroy the user from the database
-		@user.destroy	
+		@user.destroy if @user
 
 		# delete current user		
 		reset_session
