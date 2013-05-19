@@ -25,26 +25,25 @@ describe User do
 
 		it "has a valid factory" do
 												
-			# FactoryGirl.create(:valid_user).should be_valid												
-			FactoryGirl.build(:valid_user)
+			FactoryGirl.build(:user)
 
 		end
 
 		it "is invalid without a secret" do
 
-			# FactoryGirl.build(:valid_user, :secret => nil).should_not be_valid
+			FactoryGirl.build(:user, :secret => nil).should_not be_valid
 
 		end		
 
 		it "is invalid without a key" do
 
-			# FactoryGirl.build(:valid_user, :key => nil).should_not be_valid
+			FactoryGirl.build(:user, :key => nil).should_not be_valid
 
 		end
 
 		it "is invalid without a uid" do
 
-			# FactoryGirl.build(:valid_user, :key => nil).should_not be_valid	
+			FactoryGirl.build(:user, :key => nil).should_not be_valid	
 
 		end
 

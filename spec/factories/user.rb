@@ -5,7 +5,7 @@
 "
 FactoryGirl.define do
 
-	factory :valid_user do |f|
+	factory :user, :class => User do |f|
 
 		f.secret ENV['TWITTER_ACCESS_TOKEN_SECRET']	
 		f.key ENV['TWITTER_ACCESS_TOKEN_SECRET']
@@ -14,16 +14,16 @@ FactoryGirl.define do
 	end
 end
 
+# initialize a broken user with invalid parameters etc
 FactoryGirl.define do
 
-	factory :invalid_user do |f|
+	factory :invalid_user, :class => User do |f|
 
 		f.secret Faker::Lorem.characters(25)
 		f.key Faker::Lorem.characters(25)
 		f.key Faker::Lorem.characters(13)
 
 	end
-
 end
 
 
