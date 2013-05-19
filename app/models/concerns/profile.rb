@@ -2,7 +2,7 @@
 	Initialize all basic functionality for the twitter profile elements
 	Initialize all fields and require that we are using the twitter elements etc
 "
-module Profile
+module Concerns::Profile
 
 	extend ActiveSupport::Concern
 
@@ -20,7 +20,6 @@ module Profile
 	  	# include many tweets 
 	  	has_many :tweets
 
-	  	puts "HELLO FROM PROFILE CONCERN"
 	end
 
 	module InstanceMethods

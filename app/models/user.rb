@@ -20,9 +20,8 @@ class User
   # include our basic mongoid elemental structure
   include Mongoid::Document
   # include our twitter concern etc
-  # include Concerns::Twitter
-  include Twitter
-  include Profile
+  include Concerns::Twitter
+  include Concerns::Profile
 
   ######## CLASS METHODS #############
   # class method
