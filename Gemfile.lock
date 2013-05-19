@@ -61,6 +61,8 @@ GEM
     debugger-ruby_core_source (1.2.0)
     diff-lcs (1.2.4)
     erubis (2.7.0)
+    faraday (0.8.7)
+      multipart-post (~> 1.1)
     ffi (1.8.1)
     figaro (0.6.4)
       bundler (~> 1.0)
@@ -103,6 +105,7 @@ GEM
       tzinfo (~> 0.3.22)
     moped (1.4.5)
     multi_json (1.7.3)
+    multipart-post (1.2.0)
     oauth (0.4.7)
     omniauth (1.1.4)
       hashie (>= 1.2, < 3)
@@ -168,6 +171,7 @@ GEM
     sassy-buttons (0.1.4)
       compass (>= 0.12.2)
       sass (>= 3.2.0)
+    simple_oauth (0.2.0)
     slop (3.4.4)
     sprockets (2.2.2)
       hike (~> 1.2)
@@ -185,6 +189,10 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
+    twitter (4.6.2)
+      faraday (~> 0.8, < 0.10)
+      multi_json (~> 1.0)
+      simple_oauth (~> 0.2)
     tzinfo (0.3.37)
 
 PLATFORMS
@@ -210,3 +218,4 @@ DEPENDENCIES
   sassy-buttons
   stitch
   susy
+  twitter
