@@ -12,6 +12,13 @@ class SessionsController < ApplicationController
 
 	before_filter :current_user, :only => [:destroy]
 
+	# rescue from any exceptions and just send back to the homepage for now!
+	rescue_from Exception do |exception|
+
+		redirect_to logout_url
+
+	end
+
 	def new
 
 		# we want to route to our omniauth twitter provider etc here
@@ -26,8 +33,7 @@ class SessionsController < ApplicationController
 		auth = request.env["omniauth.auth"]
 
 		# now create a temporary user with the auth element etc
-		# 
-		user = User.create auth
+		user = User.omniauth_create auth
 
 		# now set the session_id 
 		session[:user_id] = user.id

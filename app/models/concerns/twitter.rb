@@ -43,13 +43,14 @@ module Concerns::Twitter
 	  	end
 
 	  	# initialize twitter inititializer methods
+	  	# this segment could change pending the twitter auth params and keys in the future
 	  	def twitter_init(params)
 
 	  		# save twitter params here etc
 	  		begin 	
 
 	  			self.uid = params.uid
-	  			self.key = params.credentials.key
+	  			self.key = params.credentials.token
 	  			self.secret = params.credentials.secret
 
 	  		# attempt to catch the errors that exist
@@ -58,6 +59,7 @@ module Concerns::Twitter
 	  			"
 	  				We had an error here that we need to throw a proper failure etc and control properly
 	  			"
+	  			raise StandardError, "Invalid Oauth Params"	
 
 	  		# if we have the correct credentials for our various methods etc, lets go ahead and try to run the client element and initialize our twitter functionality
 	  		else

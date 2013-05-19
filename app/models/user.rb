@@ -25,29 +25,17 @@ class User
 
   ######## CLASS METHODS #############
   # class method
-  def self.user(id)
+  def self.omniauth_create(params)
 
     # return a user based on the id input
+    create! do |user|
+
+      user.twitter_init params
+      user.profile()
+
+    end
 
   end
-
-  ############## OBJECT METHODS ############################
-  # constructor method for this particular element
-  def initialize(attrs = nil, options = nil)
-
-    # ensure that we initialize and create the mongoid document!
-    super
-
-    # attempt to save the proper parameters and initialize our twitter functionality!
-    twitter_init options
-
-    # no go ahead and call the profile init function to setup our basic profile information
-    profile()
-
-  end
-
-
-
 
 
 end
