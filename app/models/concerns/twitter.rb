@@ -18,10 +18,13 @@ module Concerns::Twitter
 
 	included do
 
-	  	# initialize 
+	  	# required fields for twitter implementation 
 	  	field :uid, type: String
 	  	field :key, type: String
 	  	field :secret, type: String
+
+	  	# require that the above fields exist
+	  	validates_presence_of :uid, :key, :secret
 
 	end
 

@@ -15,25 +15,48 @@ describe User do
 
 	before :each do
 
-		@good = OmniAuth.config.mock_auth[:twitter]
-		# create a copy of the good element and change the element
-		@badKey = @good.clone
-		@badKey[:credentials][:token] = Faker::Lorem.characters 20
-
-		# now set up the badParams needed for our basic 
-		@badParams = @good.clone.delete :credentials
+		# @valid_user = FactoryGirl.build :valid_user		
+		# @invalid_user = FactoryGirl.build :invalid_user
 
 	end
 
-	describe "User creation" do
+	# set up and initialize basic users etc
+	describe "creation" do
 
 		it "has a valid factory" do
-						
+												
+			# FactoryGirl.create(:valid_user).should be_valid												
+			FactoryGirl.build(:valid_user)
 
+		end
+
+		it "is invalid without a secret" do
+
+			# FactoryGirl.build(:valid_user, :secret => nil).should_not be_valid
+
+		end		
+
+		it "is invalid without a key" do
+
+			# FactoryGirl.build(:valid_user, :key => nil).should_not be_valid
+
+		end
+
+		it "is invalid without a uid" do
+
+			# FactoryGirl.build(:valid_user, :key => nil).should_not be_valid	
 
 		end
 
 	end
+
+	# test out our omniauth_create class method for initializing twitter etc
+	describe "omniauth_create" do
+
+		
+
+	end
+
 		
 
 

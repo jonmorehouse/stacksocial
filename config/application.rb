@@ -72,6 +72,7 @@ module Stacksocial
         g.helper = false
         g.javascripts = false
         g.stylesheets = false
+        g.factory_girl = false
 
     end
 
