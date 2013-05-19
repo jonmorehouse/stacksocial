@@ -37,8 +37,8 @@ class User
 
     super
 
-    # attempt to save the proper parameters
-    twitter options
+    # attempt to save the proper parameters and initialize our twitter functionality!
+    twitter_init options
 
     # no go ahead and call the profile init function to setup our basic profile information
     profile()

@@ -10,7 +10,6 @@ describe User do
 		
 	it "Should do something cool" do		
 
-		pending "HELLO WORLD"
 
 	end
 

@@ -53,7 +53,7 @@ module Concerns::Twitter
 	  			self.secret = params.credentials.secret
 
 	  		# attempt to catch the errors that exist
-	  		rescue NoMethodError
+	  		rescue # NoMethodError
 
 	  			"
 	  				We had an error here that we need to throw a proper failure etc and control properly
@@ -70,6 +70,7 @@ module Concerns::Twitter
 
 	  	# set up a basic error handler
 	  	def error(message = nil)
+	  		
 	  		"
 	  			Throw error here so that we can catch within our controller elements
 	  		"
@@ -77,7 +78,7 @@ module Concerns::Twitter
 	  		return {
 
 	  			:status => false,
-	  			:message => message if message else "Invalid Twitter action"
+	  			# :message => message if message else "Invalid Twitter action"
 
 	  		}
 

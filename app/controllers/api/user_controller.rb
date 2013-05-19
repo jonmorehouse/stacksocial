@@ -1,4 +1,4 @@
-class Api::UserController < ApplicationController
+class Api::UserController < Api::BaseController
 
 	# get the user etc
 	def index
