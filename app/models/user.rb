@@ -17,7 +17,11 @@
 		]
 "
 class User
+  # include our basic mongoid elemental structure
   include Mongoid::Document
+  # include our twitter concern etc
+  include Twitter
+
 
   	# initialize our basic credentials etc
   	field :uid, type: String
@@ -36,24 +40,22 @@ class User
   	# has_many :followers
   	# has_many :following
 
-  	# set up our our twitter client for use
-  	def client
+    # class method
+    def self.test
 
-  		# create the users twitter client and return it! as a new object
-  		return Twitter::Client.new(
+      # uid = "HELLO WORLD I AM JON"
+      puts "HELLO WORLD FROM CLASS!"
 
-  			:consumer_key => ENV['TWITTER_KEY'],
-  			:consumer_secret => ENV['TWITTER_SECRET'],
-  			:oauth_token => key,
-  			:oauth_secret => secret,
-  		)
+    end
 
-  	end
+    # object method!
+    def test
 
- 	def initialize(params) 
+      self.uid = "JON MOREHOUSE"
 
- 		# make sure we have the proper parameters here!
- 			
+      # save
 
- 	end
+    end
+
+
 end
