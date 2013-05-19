@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
 		render :json => auth
 
 		# now create a temporary user with the auth element etc
-		# user = User.create
+		user = User.create
 
 		# now set the session_id 
 		# session[:user_id] = user.id

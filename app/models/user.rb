@@ -22,7 +22,6 @@ class User
   # include our twitter concern etc
   include Twitter
 
-
   	# initialize our basic credentials etc
   	field :uid, type: String
   	field :key, type: String
@@ -33,29 +32,52 @@ class User
   	# these are all pointers to 
   	field :followers, type: Array
   	field :following, type: Array
+    field :name, type: String
+    field :description, type: String
+    field :profile_url, type: String
 
   	# 
   	has_many :tweets
-  	# can model these all up later
-  	# has_many :followers
-  	# has_many :following
 
+    ######## CLASS METHODS #############
     # class method
-    def self.test
+    def self.user(id)
 
-      # uid = "HELLO WORLD I AM JON"
-      puts "HELLO WORLD FROM CLASS!"
-
-    end
-
-    # object method!
-    def test
-
-      self.uid = "JON MOREHOUSE"
-
-      # save
+      # return a user based on the id input
 
     end
+
+
+    ############## OBJECT METHODS ############################
+    # constructor method for this particular element
+    def initialize(params)
+
+      puts "HELLO WORLD"
+      # attempt to save the proper parameters
+      begin
+
+        # initialize various parameter pieces into the actual model
+        # this is subject to change as the oauth elements change from twitter's omniauth implementation
+        self.uid = params.uid
+        self.key = params.credentials.token
+        self.secret = params.credentials.secret
+
+      # handle a bad login (improper elements with the proper message return)
+      rescue NoMethodError
+
+        # call our error function etc
+        self.error "Invalid signup"
+
+      # if all parameters are passed validly, we can go ahead and create our profile and save the document!
+      else
+
+        # save our profile and update the actual element etc
+        self.profile()
+      end
+    end
+
+
+
 
 
 end

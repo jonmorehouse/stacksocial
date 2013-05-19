@@ -1,4 +1,5 @@
 module Twitter
+	include Mongoid::Document
 	extend ActiveSupport::Concern
 
 	included do
@@ -27,12 +28,32 @@ module Twitter
 
 	  	end
 
+	  	# set up a basic error handler
+	  	def error(message = nil)
+
+	  		puts "HELLO WORLD!"
+	  		return {
+
+	  			:status => false,
+	  			:message => message if message else "Invalid Twitter action"
+
+	  		}
+
+	  	end
+
+	  	# initialize user profile
+	  	def profile
+
+
+
+	  	end
 
 	end
 
 	# initialize twitter class methods etc
 	module ClassMethods
 
+		# class methods etc for global access
 
 	end
 
