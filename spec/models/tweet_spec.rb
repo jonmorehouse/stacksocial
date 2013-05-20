@@ -8,7 +8,7 @@ describe Tweet do
 
 		@user = UserHelper.create_valid_user()
 		@twitter = @user.twitter()
-		@sampleTweet = FactoryGirl.build :tweet
+		@sampleTweet = FactoryGirl.build(:tweet)
 
 	end
 

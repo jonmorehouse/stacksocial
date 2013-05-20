@@ -12,7 +12,7 @@ class Tweet
 	include Mongoid::Document
 
 	# include our twitter base element
-	include TwitterBase
+	include Concerns::TwitterBase
 
 	# set up our basic tweet object / document etc
 	field :html, type: String

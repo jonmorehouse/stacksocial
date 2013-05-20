@@ -1,6 +1,7 @@
 "
   Initialize and set up application testing etc
   Create basic twitter omniauth middleware hash
+  Running database_cleaner with :truncation for mongoid
 
 "
 # This file is copied to spec/ when you run 'rails generate rspec:install'
@@ -8,6 +9,7 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'database_cleaner'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -48,9 +50,36 @@ RSpec.configure do |config|
     }
   }
 
+  # determine whether or not to save the elements in the test_db for looking at myself
+  config.save = false
+
   # Run specs in random order to surface order dependencies. If you find an
   # order dependency and want to debug it, you can fix the order by providing
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  # initialize our databasecleaner strategy
+  DatabaseCleaner.strategy = :truncation
+
+  # initialize before filters for all of our specs which are dependent upon whether or not we want to save db data!
+  before do
+
+    if not config.save
+
+      DatabaseCleaner.start
+    end
+  end
+
+  # only clean up the database afterwards if we are currently in clean mode
+  after do
+
+    if not config.save
+
+      DatabaseCleaner.clean
+
+    end
+  end
+
+
 end

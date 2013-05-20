@@ -39,7 +39,6 @@ end
 # intialize some testing gems etc
 group :development, :test do
 
-
 	gem 'debugger'
 	gem 'guard'
 	gem 'guard-rspec'

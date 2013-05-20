@@ -53,6 +53,7 @@ GEM
       sass (~> 3.1)
     compass_twitter_bootstrap (2.3.1)
       compass
+    database_cleaner (1.0.1)
     debugger (1.6.0)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
@@ -210,6 +211,7 @@ DEPENDENCIES
   compass
   compass-colors!
   compass_twitter_bootstrap
+  database_cleaner
   debugger
   factory_girl_rails
   faker
