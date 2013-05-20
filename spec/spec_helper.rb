@@ -50,32 +50,26 @@ RSpec.configure do |config|
     }
   }
 
-  # determine whether or not to save the elements in the test_db for looking at myself
-  save = false
+  config.order = "random"
 
   # initialize our databasecleaner strategy
   DatabaseCleaner.strategy = :truncation
 
-  # 
-  Spec::Runner.configure do |c|
+  # set whether or not we should use the databasecleaner during production
+  cleaner = false
 
-    c.before do
+  # global before all hook
+  config.before(:all) do
 
-      if not save 
-        DatabaseCleaner.start
-
-      end
-    end
-
-    c.after do
-      if not save
-
-        DatabaseCleaner.clean
-      end
-    end
+    DatabaseCleaner.start if cleaner
 
   end
-  config.order = "random"
 
+  # global after all hook
+  config.after(:all) do
 
+    DatabaseCleaner.clean if cleaner
+
+  end
 end
+

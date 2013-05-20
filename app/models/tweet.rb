@@ -5,8 +5,6 @@
 
 	search api = http://rdoc.info/gems/twitter/Twitter/API/Search
 	tweet api = http://rdoc.info/gems/twitter/Twitter/API/Tweets
-
-
 "
 class Tweet
 	include Mongoid::Document
@@ -25,18 +23,34 @@ class Tweet
 	######## CLASS METHODS ##########
 	def self.get_user_tweets(user, twitter)
 						
-		"
-			Get all user tweets here
-			Check db for these tweets and if not
+		tweet_ids = twitter.user_timeline user
 
-		"
+		tweet_ids.each do |tweet|
+
+			puts tweet.to_json
+		end
 
 	end
 
 	def self.get_tweet(tweet_id, twitter)
 
 		# look in db first -- if it doesn't exist then go ahead and save the tweet and that will return a document id!
+		begin
 
+			tweet = Tweet.find_by(tweet_id: tweet_id)		
+
+		# if document not found go ahead and create it in the db 
+		rescue Mongoid::Errors::DocumentNotFound
+
+			# first get the tweet from the server
+			status = twitter.status tweet_id
+
+			# now save the raw tweet field
+			tweet = Tweet.save_tweet status, twitter
+
+		end
+
+		return tweet
 	end
 
 	def self.search(params, twitter)
@@ -51,40 +65,56 @@ class Tweet
 	# send a tweet on behalf of a user
 	def self.tweet(params, twitter)
 
-		twitter.update params[:message] 
+		tweet = twitter.update params[:message]
+
+		self.save_tweet tweet, twitter
 
 	end
 
 	private
 
-	def self.api_tweets
+	def self.api_tweets(user_id)
 
-		# ids = twitter.user_timeline user_id
+		ids = twitter.user_timeline user_id
 
-		# oembeds = twitter.oembeds ids
+		twitter.oembeds(ids).each do |oembed|
 
+			create! do |tweet|
+
+				tweet.html = oembed.html
+				tweet.twitter_id = raw_tweet.user.id	
+				tweet.date_saved = Time.now
+				tweet.tweet_id = raw_tweet.id
+
+			end
+		end
 	end
 
-	def self.db_tweets
+	def self.db_tweets(user_id)
 
 		# get from database where tweets have the user_id of the twitter id!
+		return Tweet.where(twitter_id: user_id)		
+
 
 	end
 
-
-	# save a tweet using our elements
-	def self.save_tweet(tweet)
+	# save a tweet using our elemebbbnts
+	def self.save_tweet(raw_tweet, twitter)
 
 		# get the oembed for a single tweet and save the element
+		oembed = twitter.oembed raw_tweet.id
 
+		create! do |tweet|
+
+			tweet.html = oembed.html
+			tweet.twitter_id = raw_tweet.user.id	
+			tweet.date_saved = Time.now
+			tweet.tweet_id = raw_tweet.id
+
+		end
+		
+				
 
 	end
-
-	def self.save_tweets(tweets)
-
-
-
-	end
-
 
 end

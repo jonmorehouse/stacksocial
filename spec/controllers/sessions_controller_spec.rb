@@ -18,7 +18,6 @@ describe SessionsController do
 		it "Should create a user profile!" do	
 
 			post :create, :provider => "twitter"
-			puts response.body
 
 		end
 	end
