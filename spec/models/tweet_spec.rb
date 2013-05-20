@@ -30,14 +30,14 @@ describe Tweet do
 
 		it "can send a tweet when passed a valid message and twitter object" do
 
-			# tweet = Tweet.tweet({:message => Faker::Lorem.characters(139)}, @twitter)
-			# tweet.should_not be_nil
+			tweet = Tweet.tweet({:message => Faker::Lorem.characters(139)}, @twitter)
+			tweet.should_not be_nil
 		end
 
 		it "should save a tweet after creation" do
 
-			# tweet = Tweet.tweet({:message => Faker::Lorem.characters(120)}, @twitter)
-			# Tweet.get_tweet(tweet.tweet_id, @twitter).should_not be_nil			
+			tweet = Tweet.tweet({:message => Faker::Lorem.characters(120)}, @twitter)
+			Tweet.get_tweet(tweet.tweet_id, @twitter).should_not be_nil			
 
 		end
 
@@ -45,11 +45,11 @@ describe Tweet do
 
 			begin	
 
-				# tweet = Tweet.tweet({:message => Faker::Lorem.characters(150)}, @twitter)
+				tweet = Tweet.tweet({:message => Faker::Lorem.characters(150)}, @twitter)
 
 			rescue Exception => error
 
-				# error.should_not be_nil
+				error.should_not be_nil
 
 			end
 
@@ -61,16 +61,23 @@ describe Tweet do
 
 		it "should get a list of all a user's recent statuses" do
 
-			# 
-			tweets = Tweet.get_user_tweets(@user.twitter_id, @twitter).class.should == "Array"
+			tweets = Tweet.get_user_tweets(@user.twitter_id, @twitter)
+			tweets.class.should == Array
+			tweets.should_not be_empty
+			tweets[0].html.should_not be_nil
 
 		end
 	end
 
 	describe "search for tweets" do
 
-		pending "should be able to search twitter for tweets"
+		it "should allow me to search for tweets based on input" do
 
+			tweets = Tweet.search "twitter", @twitter
+			tweets.class.should == Array
+			tweets.should_not be_empty
+
+		end
 	end
 
 	describe "get a single tweet" do

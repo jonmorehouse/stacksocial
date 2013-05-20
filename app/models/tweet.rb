@@ -25,11 +25,13 @@ class Tweet
 						
 		tweet_ids = twitter.user_timeline user
 
-		tweet_ids.each do |tweet|
+		# do a list comprehension for each of the tweets
+		tweets = tweet_ids.map! do |tweet|
 
-			puts tweet.to_json
+			Tweet.get_tweet tweet.id, twitter
 		end
 
+		return tweets
 	end
 
 	def self.get_tweet(tweet_id, twitter)
@@ -53,13 +55,16 @@ class Tweet
 		return tweet
 	end
 
-	def self.search(params, twitter)
+	def self.search(query, twitter)
 
-		"
-			Search twitter api functionality here
-		"
-		twitter.search params, options
+		results = twitter.search query
 
+		# for each tweet grab the proper data
+		tweets = results.statuses.map do |tweet| 
+
+			Tweet.get_tweet tweet.id, twitter
+
+		end
 	end
 
 	# send a tweet on behalf of a user
