@@ -12,26 +12,44 @@ module Concerns::Profile
 	  	# this will be a list of all the follower's were currently working with!
 	  	# these are all pointers to 
 	  	field :followers, type: Array
-	  	field :following, type: Array
+	  	field :friends, type: Array
 	    field :name, type: String
 	    field :description, type: String
-	    field :profile_url, type: String
+	    field :profile_image_url, type: String
+	    field :twitter_id, type: String
 
 	  	# include many tweets 
 	  	has_many :tweets
-
 	end
 
 	def get_profile
-
-		# get our twitter client
+			
 		twitter = twitter()
-		self.followers = twitter.followers
-		self.description = twitter.user.description
-		self.name = twitter().friends
+
+		begin
+
+			# get the current user
+			user = twitter.user
+			# now cache the fields we want etc
+			self.name = user.name
+			# cache the user profile image
+			self.profile_image_url = user.profile_image_url
+			# cache our description
+			self.description = user.description
+			# now update tweets
+			self.twitter_id = user.id
+
+			# call a class method which will get the tweets for a user!
+			# self.followers = twitter.followers.users
+			# self.friends = twitter.friends.users
+
+			save
+
+		rescue Twitter::Error => error
+			
+			puts error.message
+
+		end
 
 	end
-
-
-
 end

@@ -38,8 +38,6 @@ module Concerns::Twitter
   		# create the users twitter client and return it! as a new object
   		return Twitter::Client.new(
 
-  			:consumer_key => ENV['TWITTER_KEY'],
-  			:consumer_secret => ENV['TWITTER_SECRET'],
   			:oauth_token => self.key,
   			:oauth_token_secret => self.secret,
   		)

@@ -54,7 +54,7 @@ describe User do
 
 			before do
 
-				@user = UserHelper::create_valid_user() 
+				@user = UserHelper.create_valid_user() 
 
 			end
 
@@ -93,14 +93,14 @@ describe User do
 
 		before do
 
-			@user = UserHelper::create_valid_user()
+			@user = UserHelper.create_valid_user()
 
 		end
 
 		it "should successfully get the user's profile" do	
 
 			@user.get_profile()
-
+			# puts @user.followers 
 
 		end
 
