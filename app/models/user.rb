@@ -21,8 +21,6 @@ class User
   include Mongoid::Document
   # include our twitter concern etc
   include Concerns::Twitter
-  # 
-  include Concerns::Profile
 
   ######## CLASS METHODS #############
   # class method

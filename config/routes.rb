@@ -10,7 +10,7 @@ Stacksocial::Application.routes.draw do
   match "/login" => "sessions#new", :as => :login 
 
   # app url base
-  match "/app" => "app#index", :ass => :app
+  match "/app" => "app#index", :as => :app
 
   # create namespace for api calls etc!
   # all angular access goes through here
@@ -21,6 +21,9 @@ Stacksocial::Application.routes.draw do
 
   	# create / get tweets
   	resources :tweet
+
+    # messaging between different elements
+    resources :message, :only => [:create]
 
   end
 

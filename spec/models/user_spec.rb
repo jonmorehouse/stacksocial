@@ -71,14 +71,6 @@ describe User do
 
 			end
 
-			it "should throw an error back when we attempt to create an invalid user" do
-
-				"
-					IMPLEMENT test with missing params
-				"
-
-			end
-
 			it "should successfully give us a twitter client object" do
 
 				@user.twitter().class.should be == Twitter::Client
@@ -86,33 +78,4 @@ describe User do
 			end
 		end
 	end
-
-	describe "profile" do
-
-		before do
-
-			@user = UserHelper.create_valid_user()
-
-		end
-
-		it "should successfully get the user's profile" do	
-
-			# make sure we update the profile etc
-			@user.get_profile()
-
-			@user.name.should_not be_nil
-			@user.description.should_not be_nil
-			@user.profile_image_url.should_not be_nil
-			@user.twitter_id.should_not be_nil
-
-		end
-
-	end
-
-
-
-		
-
-
-
 end

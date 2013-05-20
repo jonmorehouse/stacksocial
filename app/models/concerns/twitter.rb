@@ -25,9 +25,10 @@ module Concerns::Twitter
 	  	field :uid, type: String
 	  	field :key, type: String
 	  	field :secret, type: String
+      field :twitter_id, type: String
 
 	  	# require that the above fields exist
-	  	validates_presence_of :uid, :key, :secret
+	  	validates_presence_of :uid, :key, :secret, :twitter_id
 
 	end
 
@@ -53,6 +54,7 @@ module Concerns::Twitter
   		begin 	
 
         self.uid = params.with_indifferent_access["uid"]
+        self.twitter_id = params.with_indifferent_access["uid"]
   			self.key = params.with_indifferent_access["credentials"].with_indifferent_access["token"]
   			self.secret = params.with_indifferent_access["credentials"].with_indifferent_access["secret"]
 

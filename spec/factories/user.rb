@@ -10,6 +10,7 @@ FactoryGirl.define do
 		f.secret ENV['TWITTER_ACCESS_TOKEN_SECRET']	
 		f.key ENV['TWITTER_ACCESS_TOKEN_SECRET']
 		f.uid ENV['TWITTER_UID']
+		f.twitter_id ENV['TWITTER_UID']
 
 	end
 end

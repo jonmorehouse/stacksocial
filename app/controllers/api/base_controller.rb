@@ -36,7 +36,7 @@ class Api::BaseController < ApplicationController
 	# explicit handler for all error rendering etc
 	def error_handler(exception)
 
-		render :json => {:message => exception}
+		render :json => {:message => exception, :params => @params}
 
 	end
 
