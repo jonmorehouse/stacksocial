@@ -16,6 +16,7 @@
 	]
 "
 module Concerns::Twitter
+
 	extend ActiveSupport::Concern
 
 	included do

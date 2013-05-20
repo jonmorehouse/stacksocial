@@ -73,10 +73,8 @@ describe User do
 
 			it "should throw an error back when we attempt to create an invalid user" do
 
-
 				"
 					IMPLEMENT test with missing params
-
 				"
 
 			end
@@ -99,8 +97,13 @@ describe User do
 
 		it "should successfully get the user's profile" do	
 
+			# make sure we update the profile etc
 			@user.get_profile()
-			# puts @user.followers 
+
+			@user.name.should_not be_nil
+			@user.description.should_not be_nil
+			@user.profile_image_url.should_not be_nil
+			@user.twitter_id.should_not be_nil
 
 		end
 

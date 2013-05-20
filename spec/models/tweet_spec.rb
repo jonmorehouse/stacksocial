@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe Tweet do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+	describe "creation" do
+
+		pending "HELLO WORLD"
+
+	end
+
+
 end

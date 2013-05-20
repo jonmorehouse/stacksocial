@@ -40,9 +40,6 @@ module Concerns::Profile
 			self.twitter_id = user.id
 
 			# call a class method which will get the tweets for a user!
-			# self.followers = twitter.followers.users
-			# self.friends = twitter.friends.users
-
 			save
 
 		rescue Twitter::Error => error
