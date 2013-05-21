@@ -7,6 +7,7 @@ describe Profile do
 
 		@user = UserHelper.create_valid_user()
 		@twitter = @user.twitter()
+
 	end
 
 	describe "creation" do
@@ -21,12 +22,11 @@ describe Profile do
 
 			profile = Profile.create_with_twitter @twitter		
 
-			profile.should_be valid
+			profile.should be_valid
 			profile.name.should_not be_nil
 			profile.description.should_not be_nil
 			profile.profile_image_url.should_not be_nil
 			profile.twitter_id.should_not be_nil
-			profile.tweets.class.should == Array
 
 		end
 	end

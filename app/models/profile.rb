@@ -13,7 +13,8 @@ class Profile
     field :description, type: String
     field :profile_image_url, type: String
     field :twitter_id, type: String
-    # has_many :tweets
+    has_many :tweets
+    belongs_to :user
 
     # validate the presence of an element
     validates_presence_of :name, :description, :profile_image_url, :twitter_id
@@ -37,6 +38,14 @@ class Profile
 
 			# call a class method which will get the tweets for a user!
 		end
+	end
+
+	def self.get_profile(twitter_id, twitter)
+
+		"
+			get a profile from the database or create it and return it if not
+		"
+
 	end
 
 	def self.message(params, twitter)

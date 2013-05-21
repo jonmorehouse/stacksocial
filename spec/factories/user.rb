@@ -11,6 +11,7 @@ FactoryGirl.define do
 		f.key ENV['TWITTER_ACCESS_TOKEN_SECRET']
 		f.uid ENV['TWITTER_UID']
 		f.twitter_id ENV['TWITTER_UID']
+		f.profile FactoryGirl.build(:profile)
 
 	end
 end

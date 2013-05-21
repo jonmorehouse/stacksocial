@@ -17,22 +17,23 @@
 		]
 "
 class User
-  # include our basic mongoid elemental structure
-  include Mongoid::Document
-  # include our twitter concern etc
-  include Concerns::Twitter
+	# include our basic mongoid elemental structure
+	include Mongoid::Document
+	# include our twitter concern etc
+	include Concerns::Twitter
+	# make sure we link a profile!
+	has_one :profile
 
-  ######## CLASS METHODS #############
-  # class method
-  def self.omniauth_create(params)
+	######## CLASS METHODS #############
+	# class method
+	def self.omniauth_create(params)
 
-    # return a user based on the id input
-    create! do |user|
+		# return a user based on the id input
+		create! do |user|
 
-      user.twitter_init params
+			user.twitter_init params
 
-    end
-  end
-
+		end
+	end
 
 end
