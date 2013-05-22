@@ -56,7 +56,7 @@ RSpec.configure do |config|
   DatabaseCleaner.strategy = :truncation
 
   # set whether or not we should use the databasecleaner during production
-  cleaner = true
+  # cleaner = true
 
   # global before all hook
   config.before(:all) do

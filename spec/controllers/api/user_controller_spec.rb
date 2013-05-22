@@ -1,12 +1,14 @@
 require 'spec_helper'
+require 'user_helper'
 
 describe Api::UserController do
 
 	before do
 
-		request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:twitter]
-		@profile = FactoryGirl.build :profile
-		@user = FactoryGirl.build :user
+
+		UserHelper.create_valid_user()
+		@profile = FactoryGirl.create :profile
+		@user = FactoryGirl.create :user
 
 	end
 
@@ -15,9 +17,9 @@ describe Api::UserController do
 		it "Should return a user profile if I'm logged in properly" do
 
 			get :index
-
-
-
+			puts response.body
+			# response = JSON.loads response.body
+			# puts response
 
 		end
 
