@@ -1,14 +1,13 @@
 require 'spec_helper'
 require 'user_helper'
 
+
 describe Api::UserController do
 
 	before do
 
-
-		UserHelper.create_valid_user()
-		@profile = FactoryGirl.create :profile
-		@user = FactoryGirl.create :user
+		@user = UserHelper.create_valid_user()
+		session[:id] = @user.id
 
 	end
 
@@ -18,14 +17,14 @@ describe Api::UserController do
 
 			get :index
 			puts response.body
-			# response = JSON.loads response.body
-			# puts response
+
 
 		end
 
 		it "Should return an error message if I'm not logged in properly" do
 
-
+			get :index
+			puts response.body
 
 
 		end

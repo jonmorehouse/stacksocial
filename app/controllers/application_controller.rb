@@ -50,7 +50,7 @@ class ApplicationController < ActionController::Base
 
       begin 
 
-        @user ||= User.find(session[:user_id]) if session[:user_id]
+        @user ||= User.find(session[:id]) if session[:id]
 
       # if we have a mongoid error, handle it nicely and return 
       # obviously, its not safe to capture all exceptions but this works fine for the simplicity of this application

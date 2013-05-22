@@ -52,12 +52,13 @@ RSpec.configure do |config|
 
   config.order = "random"
 
+  cleaner = true
+
   # initialize our databasecleaner strategy
   DatabaseCleaner.strategy = :truncation
 
   # set whether or not we should use the databasecleaner during production
   # cleaner = true
-
   # global before all hook
   config.before(:all) do
 
