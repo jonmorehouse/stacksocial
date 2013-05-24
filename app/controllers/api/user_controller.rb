@@ -9,9 +9,9 @@ class Api::UserController < Api::BaseController
 	end
 
 	# get an individual user
-	def get(params)
+	def show
 
-		
+		render :json => User.where(uid: @params[:id])
 		
 	end
 
