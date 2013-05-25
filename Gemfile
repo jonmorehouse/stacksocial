@@ -10,6 +10,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 # twitter gem is used to create valid oauth elements etc
 gem 'twitter'
+gem 'mysql'
 
 # Gems used only for assets and not required
 # in production environments by default.
