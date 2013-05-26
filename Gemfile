@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-
 # initialize some global gems etc
 gem 'mongoid'
 gem 'figaro'
@@ -10,14 +9,14 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 # twitter gem is used to create valid oauth elements etc
 gem 'twitter'
-gem 'mysql'
+
+gem 'jbuilder'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
 
 	gem 'haml'
-	gem 'jbuilder'
 	# gruntfile dependencies go in here but in reality can just use system elements
 	# we're going to deploy static assets to heroku etc
 	gem 'sass'
@@ -27,11 +26,8 @@ group :assets do
 	gem 'compass_twitter_bootstrap'
 	# intiaillize my custom compass colors
 	gem 'compass-colors', :github => 'MorehouseJ09/compass-colors'
-
 	gem 'animate-sass', :github => 'MorehouseJ09/animate.sass'
-
 	gem 'sassy-buttons'
-
 	gem 'susy'
 	gem 'stitch'
 

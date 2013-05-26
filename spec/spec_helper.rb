@@ -52,7 +52,7 @@ RSpec.configure do |config|
 
   config.order = "random"
 
-  cleaner = true
+  cleaner = true 
 
   # initialize our databasecleaner strategy
   DatabaseCleaner.strategy = :truncation

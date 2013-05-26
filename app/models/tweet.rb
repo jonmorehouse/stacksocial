@@ -21,9 +21,9 @@ class Tweet
 	validates_presence_of [:html, :twitter_id, :date_saved, :tweet_id]
 
 	######## CLASS METHODS ##########
-	def self.get_user_tweets(user, twitter)
+	def self.get_user_tweets(user_id, twitter)
 						
-		tweet_ids = twitter.user_timeline user
+		tweet_ids = twitter.user_timeline user_id
 
 		# do a list comprehension for each of the tweets
 		tweets = tweet_ids.map! do |tweet|

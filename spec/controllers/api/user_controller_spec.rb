@@ -42,21 +42,25 @@ describe Api::UserController do
 
 		it "Should return a user profile if I'm logged in properly" do
 
+			# initialize our request etc
 			get :index
-			puts JSON.parse(response.body)[:id]
+			data = JSON.parse response.body
+
+			data["uid"].should == @user.uid
+			data["twitter_id"].should == @user.twitter_id
+			data["profile"]["name"].should == @user.profile.name 
+			data["profile"]["description"].should == @user.profile.description
 
 		end
 
 		it "Should return an error message if I'm not logged in properly" do
 
-			get :show, :id => "HELL OWORLD"
+			# get :show, :id => "HELL OWORLD"
 
 			# ensure that our controller is getting the correct items
-			controller.params.should_not be_nil
+			# controller.params.should_not be_nil
+
 		end
-
-
-
 	end
 
 end

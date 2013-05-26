@@ -32,6 +32,7 @@ class User
 		create! do |user|
 
 			user.twitter_init params
+			user.profile = Profile.create_with_twitter user.twitter()
 
 		end
 	end

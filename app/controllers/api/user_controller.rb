@@ -1,11 +1,9 @@
 class Api::UserController < Api::BaseController
 
-	# get the user etc
+	# get the current user by default
 	def index
 
-		render :json => @user.to_json	
-
-
+		render "api/user"
 	end
 
 	# get an individual user
@@ -17,8 +15,9 @@ class Api::UserController < Api::BaseController
 
 	# update the status of the user
 	def update
-
+		
 		# check if the current use is this person
+		
 	end
 
 	def message

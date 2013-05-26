@@ -21,7 +21,7 @@ class Profile
 
  	# require that the profile is created with a twitter object being passed in! 
 	def self.create_with_twitter(twitter)
-			
+
 		create! do |profile|
 
 			# get the current user
@@ -34,9 +34,6 @@ class Profile
 			profile.description = user.description
 			# now update tweets
 			profile.twitter_id = user.id
-			# profile.tweets = Tweet.get_user_tweets(user.id, twitter).map {|tweet| tweet.tweet_id }
-
-			# call a class method which will get the tweets for a user!
 		end
 	end
 
