@@ -21,6 +21,8 @@ class User
 	include Mongoid::Document
 	# include our twitter concern etc
 	include Concerns::Twitter
+	field :created_at, type: DateTime
+
 	# make sure we link a profile!
 	has_one :profile
 
@@ -31,9 +33,10 @@ class User
 		# return a user based on the id input
 		create! do |user|
 
+			user.created_at = DateTime.now.to_s
 			user.twitter_init params
-			user.profile = Profile.create_with_twitter user.twitter()
-
+			user.profile = Profile.create_profile user.twitter()
+			
 		end
 	end
 

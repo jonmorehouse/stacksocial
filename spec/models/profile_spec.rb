@@ -20,7 +20,7 @@ describe Profile do
 
 		it "can be successfully created with a valid user's twitter object" do
 
-			profile = Profile.create_with_twitter @twitter		
+			profile = Profile.create_profile @twitter		
 
 			profile.should be_valid
 			profile.name.should_not be_nil

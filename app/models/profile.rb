@@ -1,11 +1,12 @@
 "
 	Models are the basic class for users and interaction etc
 	These live after the duration of our element
-
-
 "
 class Profile
-  include Mongoid::Document
+
+	include Mongoid::Document
+	include Concerns::Interaction
+
 
   	field :followers, type: Array
   	field :friends, type: Array
@@ -20,12 +21,43 @@ class Profile
     validates_presence_of :name, :description, :profile_image_url, :twitter_id
 
  	# require that the profile is created with a twitter object being passed in! 
-	def self.create_with_twitter(twitter)
+	def self.create_profile(twitter)
+
+		begin
+
+			return Profile.find_by(twitter_id: twitter.user.id)
+
+		rescue Mongoid::Errors::DocumentNotFound
+
+			return Profile.create_document twitter.user
+		end
+	end
+
+	"
+		Get a profile from our database
+		if it doesn't exist, create the document and return the profile
+	"
+	def self.get_profile(twitter_id, twitter)
+
+		begin
+
+			return Profile.find_by(twitter_id: twitter_id)
+
+		rescue Mongoid::Errors::DocumentNotFound
+
+			return Profile.create_document twitter.user twitter_id
+
+		end
+	end
+
+	private
+	"
+		create a document in the database given a Twitter::User object
+	"
+	def self.create_document(user)
 
 		create! do |profile|
 
-			# get the current user
-			user = twitter.user
 			# now cache the fields we want etc
 			profile.name = user.name
 			# cache the user profile image
@@ -34,25 +66,10 @@ class Profile
 			profile.description = user.description
 			# now update tweets
 			profile.twitter_id = user.id
+
 		end
-	end
 
-	def self.get_profile(twitter_id, twitter)
-
-		"
-			get a profile from the database or create it and return it if not
-		"
+		return profile
 
 	end
-
-	def self.message(params, twitter)
-
-		"
-			message a user based on the params[:twitter_id] and params[:message]
-
-		"
-
-
-	end
-
 end

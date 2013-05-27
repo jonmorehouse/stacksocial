@@ -26,6 +26,22 @@ class Api::BaseController < ApplicationController
 
 	protected
 
+	def pretty_render(template = nil)
+
+		if template 
+
+			json_string = render_to_string template, formats: :json
+
+		else
+
+			json_string = render_to_string formats: :json
+		end
+
+		json_object = JSON.parse(json_string)
+		render :json => JSON.pretty_generate(json_object)
+
+	end
+
 	# initialize our application logic / authentication logic
 	def init
 

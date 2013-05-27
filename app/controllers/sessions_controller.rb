@@ -64,9 +64,4 @@ class SessionsController < ApplicationController
 
 	end
 
-	def test
-
-		render :json => {"message" => "HELLO WORLD"}
-		
-	end
 end
